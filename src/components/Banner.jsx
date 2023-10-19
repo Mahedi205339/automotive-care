@@ -34,7 +34,7 @@ const Banner = () => {
                     <SwiperSlide>
                         <div id="slide1" className="carousel-item relative w-full">
                             <div className="hero lg:h-[800px]" style={{ backgroundImage: `url(${banner1})` }}>
-                                <div className="hero-overlay bg-opacity-60"></div>
+                                <div className="hero-overlay bg-black opacity-60"></div>
                                 <div className="hero-content text-left text-neutral-content">
                                     <div className="">
                                         <h1 className="mb-5 text-2xl md:text-4xl lg:text-5xl font-bold">
@@ -66,7 +66,7 @@ const Banner = () => {
                     <SwiperSlide>
                         <div id="slide1" className="carousel-item relative w-full">
                             <div className="hero lg:h-[800px]" style={{ backgroundImage: `url(${banner2})` }}>
-                                <div className="hero-overlay bg-opacity-60"></div>
+                                <div className="hero-overlay bg-black opacity-60"></div>
                                 <div className="hero-content text-left text-neutral-content">
                                     <div className="">
                                         <h1 className="mb-5 text-2xl md:text-4xl lg:text-5xl font-bold">
@@ -98,7 +98,7 @@ const Banner = () => {
                     <SwiperSlide>
                         <div id="slide1" className="carousel-item relative w-full">
                             <div className="hero lg:h-[800px]" style={{ backgroundImage: `url(${banner3})` }}>
-                                <div className="hero-overlay bg-opacity-60"></div>
+                                <div className="hero-overlay bg-black opacity-60"></div>
                                 <div className="hero-content text-left text-neutral-content">
                                     <div className="">
                                         <h1 className="mb-5 text-2xl md:text-4xl lg:text-5xl font-bold">
@@ -130,7 +130,7 @@ const Banner = () => {
                     <SwiperSlide>
                         <div id="slide1" className="carousel-item relative w-full">
                             <div className="hero lg:h-[800px]" style={{ backgroundImage: `url(${banner4})` }}>
-                                <div className="hero-overlay bg-opacity-60"></div>
+                                <div className="hero-overlay bg-black opacity-60"></div>
                                 <div className="hero-content text-left text-neutral-content">
                                     <div className="">
                                         <h1 className="mb-5 text-2xl md:text-4xl lg:text-5xl font-bold">
