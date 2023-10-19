@@ -33,7 +33,7 @@ const Banner = () => {
                 <div>
                     <SwiperSlide>
                         <div id="slide1" className="carousel-item relative w-full">
-                            <div className="hero lg:h-[800px]" style={{ backgroundImage: `url(${banner1})` }}>
+                            <div className="hero lg:h-[80vh]" style={{ backgroundImage: `url(${banner1})` }}>
                                 <div className="hero-overlay bg-black opacity-60"></div>
                                 <div className="hero-content text-left text-neutral-content">
                                     <div className="">

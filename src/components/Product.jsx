@@ -2,8 +2,8 @@
 const Product = ({product}) => {
     const {image , short_description , name , type , price } = product ;
     return (
-        <div data-aos="zoom-in" className="max-w-7xl mx-auto ">
-            <div className="card w-96 bg-black shadow-xl">
+        <div data-aos="zoom-in">
+            <div className="card  bg-black shadow-xl">
                 <figure><img src={image} /></figure>
                 <div className="card-body">
                     <h2 className="card-title">{name}</h2>
