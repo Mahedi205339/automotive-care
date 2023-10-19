@@ -56,13 +56,13 @@ const Login = () => {
                     confirmMessage && < p className="text-green-600 font-bold">{confirmMessage}</p>
                 }
                 <div className="text-center lg:text-left">
-                    <h1 className="text-5xl font-bold">Login now!</h1>
+                    <h1 className="text-5xl text-red-600 font-bold">Login now!</h1>
                 </div>
                 <div className="card  w-full max-w-sm">
                     <form onSubmit={handleLogin} className="card-body">
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text">Email</span>
+                                <span className="label-text text-red-600 font-bold">Email :</span>
                             </label>
                             <input type="email"
                                 name="email"
@@ -70,27 +70,26 @@ const Login = () => {
                         </div>
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text">Password</span>
+                                <span className="label-text text-red-600 font-bold">Password</span>
                             </label>
                             <input type="password"
                                 name="password"
-                                placeholder="password" className="input input-bordered" required />
+                                placeholder="password" className="input input-bordered text-black" required />
                             <label className="label">
-                                <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                                <a href="#" className="label-text-alt  text-red-600  link link-hover">Forgot password?</a>
                             </label>
                         </div>
                         <div className="form-control mt-6 ">
-                            <button className=" bg-yellow-600 text-white hover:bg-white  hover:text-yellow-600 w-36 h-10 rounded-lg">Login</button>
+                            <button className=" bg-red-600 text-white hover:bg-white  hover:text-red-600 w-36 h-10 rounded-lg">Login</button>
                         </div>
                     </form>
-                    <p className="mb-4 text-center">Do not have an account ? Please <Link className="font-bold text-yellow-600 underline" to="/register">Register</Link> </p>
+                    <p className="mb-4 text-center">Do not have an account ? Please <Link className="font-bold text-red-600 underline" to="/register">Register</Link> </p>
                 </div>
                 <div className="gap-2">
-                    <button onClick={googleLogin} className="btn my-4 btn-outline w-full">
+                    <button onClick={googleLogin} className="btn border border-red-600 text-red-600 my-4 btn-outline w-full">
                         <FcGoogle></FcGoogle>
                         Google
                     </button>
-
                 </div>
             </div>
         </div>
