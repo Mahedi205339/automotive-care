@@ -5,6 +5,8 @@ import ErrorPage from "./ErrorPage";
 import Login from "../pages/Login/Login";
 import Registration from "../pages/Registation/Registration";
 import AddCar from "../pages/AddCar/AddCar";
+import Details from "../components/Details";
+import UpdateCar from "../pages/UpdateCar/UpdateCar";
 
 
 const router = createBrowserRouter([
@@ -15,19 +17,29 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('/data.json')
+                loader: () => fetch('http://localhost:5000/cars')
             },
             {
                 path: '/login',
                 element: <Login></Login>
             },
             {
-                path:'/addCar',
-                element:<AddCar></AddCar>
+                path: 'carsDetails/:id',
+                element: <Details></Details>,
+                loader: () => fetch('http://localhost:5000/cars')
             },
             {
-                path:'/register',
-                element:<Registration></Registration>
+                path: '/addCar',
+                element: <AddCar></AddCar>
+            },
+            {
+                path: '/register',
+                element: <Registration></Registration>
+            },
+            {
+                path: '/updateCars/:id',
+                element: <UpdateCar></UpdateCar>,
+                loader: ({ params }) => fetch(`http://localhost:5000/cars/${params}`)
             }
 
         ],
