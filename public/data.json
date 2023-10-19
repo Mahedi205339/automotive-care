@@ -4,7 +4,7 @@
         "image": "https://i.ibb.co/pRVJRGS/car2.jpg",
         "name": "Lamborghini",
         "brand_name": "Lamborghini",
-        "type": "Sedan",
+        "type": "Sports",
         "price": 65000,
         "short_description": "Experience the epitome of luxury with this Audi sedan. With a powerful engine and advanced technology, it's designed for the discerning driver."
     },
@@ -13,25 +13,25 @@
         "image": "https://i.ibb.co/DYRkf8t/car1.jpg",
         "name": "Lamborghini",
         "brand_name": "Lamborghini",
-        "type": "Coupe",
+        "type": "Sports",
         "price": 75000,
         "short_description": "Unleash your inner racer with the Porsche Sporty Coupe. This high-performance coupe is a thrill-seeker's dream."
     },
     {
         "id": 3,
         "image": "https://i.ibb.co/vYbpFYt/car3.jpg",
-        "name": "Family SUV",
-        "brand_name": "Toyota",
-        "type": "SUV",
+        "name": "BMW",
+        "brand_name": "BMW",
+        "type": "Luxury",
         "price": 45000,
-        "short_description": "The Toyota Family SUV is perfect for all your adventures. It offers spacious interiors and top-notch safety features."
+        "short_description": "The BMW is perfect for all your adventures. It offers spacious interiors and top-notch safety features."
     },
     {
         "id": 4,
         "image": "https://i.ibb.co/vYbpFYt/car3.jpg",
-        "name": "Compact Hatchback",
-        "brand_name": "Volkswagen",
-        "type": "Hatchback",
+        "name": "BMW i7",
+        "brand_name": "BMW",
+        "type": "Luxury",
         "price": 25000,
         "short_description": "The Volkswagen Compact Hatchback is a nimble and fuel-efficient car, ideal for urban commuting and tight parking spaces."
     }

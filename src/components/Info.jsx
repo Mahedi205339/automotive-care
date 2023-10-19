@@ -8,7 +8,7 @@ const Info = () => {
                 </h2>
 
                 <div className='flex flex-col md:flex-row gap-5 lg:gap-10 p-3'>
-                    <div className='flex-1'>
+                    <div data-aos="zoom-in" className='flex-1'>
                         <img src={img1} alt="" />
                     </div>
                     <div className='flex-1'>

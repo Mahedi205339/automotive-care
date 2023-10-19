@@ -1,18 +1,18 @@
-import {  NavLink } from "react-router-dom";
-// import userPic from '../../assets/user.png'
-import logo from "../assets/images/carlogo.png"
-// import { useContext } from "react";
-// import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { NavLink } from "react-router-dom";
+import carlogo from '../assets/images/carlogo.png'
+import { useContext } from "react";
+import userLogo from '../assets/images/user.png'
+import { AuthContext } from "../AuthProvider/AuthProvider";
 const Navbar = () => {
-    // const { user, logOut } = useContext(AuthContext)
-    // console.log(user)
-    // const handleLogOut = () => {
-    //     logOut()
-    //         .then(result => {
-    //             result.user
-    //         })
-    //         .catch(error => console.error(error))
-    // }
+    const { user, logOut } = useContext(AuthContext)
+    console.log(user)
+    const handleLogOut = () => {
+        logOut()
+            .then(result => {
+                result.user
+            })
+            .catch(error => console.error(error))
+    }
 
 
     const navLink = <>
@@ -25,12 +25,12 @@ const Navbar = () => {
             Home
         </NavLink> </li>
         <li> <NavLink
-            to="/"
+            to="/addCar"
             className={({ isActive, isPending }) =>
                 isPending ? "pending" : isActive ? "bg-red-600" : ""
             }
         >
-            Cart
+            Add Car
         </NavLink> </li>
         <li> <NavLink
             to="/login"
@@ -40,18 +40,14 @@ const Navbar = () => {
         >
             Login
         </NavLink> </li>
-        <li> <NavLink
+        {/* <li> <NavLink
             to="/registration"
             className={({ isActive, isPending }) =>
                 isPending ? "pending" : isActive ? "bg-red-600" : ""
             }
         >
-           Registration
-        </NavLink> </li>
-
-
-
-
+            Registration
+        </NavLink> </li> */}
     </>
 
     return (
@@ -65,7 +61,7 @@ const Navbar = () => {
                         {navLink}
                     </ul>
                 </div>
-                <img className="w-32 lg:w-44" src={logo} alt="" />
+                <img className="w-32 lg:w-44" src={carlogo} alt="" />
             </div>
             {/* <div className="navbar-center gap-2">
                 
@@ -76,16 +72,14 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <div className="flex items-center gap-2">
-                    {/* <img className="h-14 rounded-lg"  alt="" /> */}
-                    {/* <p>{user?.displayName}</p> */}
+                <div className="flex items-center gap-4">
+                    <img className="h-14 rounded-full" src={user?.photoURL ? user.photoURL : userLogo} alt="" />
+                    <p className="mr-3">{user?.displayName}</p>
                 </div>
 
-                {/* {
-                    user ? <button className="btn">Log out</button> : <Link to="/login">
-                        <button className="btn">Login</button>
-                    </Link>
-                } */}
+                {
+                    user ? <button onClick={handleLogOut} className=" font-semibold px-4 py-2 rounded bg-red-600 border-collapse text-white">Log out</button> : null
+                }
 
             </div>
         </div>
