@@ -15,7 +15,7 @@ const Info = () => {
                         <h1 className='text-3xl uppercase '>
                             <span className='text-gray-400'> meet our</span> <br />
                             <span className='text-red-600'>
-                                CAR CLUB SINCE 2023
+                                CAR CLUB SINCE 1979
                             </span>
                         </h1>
                         <hr className='w-full my-3 h-[1px]' />
