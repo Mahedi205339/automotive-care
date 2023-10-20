@@ -40,14 +40,14 @@ const Navbar = () => {
         >
             Login
         </NavLink> </li>
-        {/* <li> <NavLink
-            to="/registration"
+        <li> <NavLink
+            to="/register"
             className={({ isActive, isPending }) =>
                 isPending ? "pending" : isActive ? "bg-red-600" : ""
             }
         >
             Registration
-        </NavLink> </li> */}
+        </NavLink> </li>
     </>
 
     return (
@@ -73,12 +73,12 @@ const Navbar = () => {
             </div>
             <div className="navbar-end">
                 <div className="flex items-center gap-4">
-                    <img className="h-14 rounded-full" src={user?.photoURL ? user.photoURL : userLogo} alt="" />
+                    <img className="h-10 md:h-14 rounded-full" src={user?.photoURL ? user.photoURL : userLogo} alt="" />
                     <p className="mr-3">{user?.displayName}</p>
                 </div>
 
                 {
-                    user ? <button onClick={handleLogOut} className=" font-semibold px-4 py-2 rounded bg-red-600 border-collapse text-white">Log out</button> : null
+                    user ? <button onClick={handleLogOut} className=" font-semibold px-2 py-1 lg:px-4 lg:py-2 rounded bg-red-600 border-collapse text-white">Log out</button> : null
                 }
 
             </div>

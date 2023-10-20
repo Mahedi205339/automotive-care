@@ -66,7 +66,7 @@ const Login = () => {
                             </label>
                             <input type="email"
                                 name="email"
-                                placeholder="email" className="input input-bordered" required />
+                                placeholder="email" className="input input-bordered text-black" required />
                         </div>
                         <div className="form-control">
                             <label className="label">

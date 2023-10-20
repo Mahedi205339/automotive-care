@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import PropTypes from 'prop-types';
 
-const Product = ({ product }) => {
+const Product = ({ products, product, setProducts }) => {
     console.log(product)
     const { photo, details, name, type, price, _id } = product;
 
@@ -31,6 +32,9 @@ const Product = ({ product }) => {
                                 'Your file has been deleted.',
                                 'success'
                             )
+                            const remaining = products.filter(car => car._id !== _id)
+                            setProducts(remaining)
+                            console.log(remaining)
                         }
                     })
             }
@@ -58,6 +62,12 @@ const Product = ({ product }) => {
             </div>
         </div>
     );
+};
+
+Product.propTypes = {
+    products: PropTypes.array,
+    product: PropTypes.object,
+    setProducts: PropTypes.func
 };
 
 export default Product;

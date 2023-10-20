@@ -4,18 +4,22 @@ import FeatureProduct from "../../components/FeatureProduct";
 import Info from "../../components/Info";
 import Comments from "../../components/Comments";
 import BlogPost from "../../components/BlogPost";
+import ContactUs from "../../components/ContactUs";
 
 
 const Home = () => {
-    const products = useLoaderData()
+    const loadedProducts = useLoaderData();
     
+
     return (
         <div>
             <Banner></Banner>
             <Info></Info>
-            <FeatureProduct products={products}></FeatureProduct>
+            <FeatureProduct
+                loadedProducts={loadedProducts}></FeatureProduct>
             <Comments></Comments>
             <BlogPost></BlogPost>
+            <ContactUs></ContactUs>
         </div>
     );
 };

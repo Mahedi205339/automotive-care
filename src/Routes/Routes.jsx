@@ -7,6 +7,7 @@ import Registration from "../pages/Registation/Registration";
 import AddCar from "../pages/AddCar/AddCar";
 import Details from "../components/Details";
 import UpdateCar from "../pages/UpdateCar/UpdateCar";
+import PrivateRoute from "./PrivateRoute";
 
 
 const router = createBrowserRouter([
@@ -25,12 +26,12 @@ const router = createBrowserRouter([
             },
             {
                 path: 'carsDetails/:id',
-                element: <Details></Details>,
+                element: <PrivateRoute><Details></Details></PrivateRoute>,
                 loader: () => fetch('http://localhost:5000/cars')
             },
             {
                 path: '/addCar',
-                element: <AddCar></AddCar>
+                element: <PrivateRoute><AddCar></AddCar></PrivateRoute>
             },
             {
                 path: '/register',
@@ -38,7 +39,7 @@ const router = createBrowserRouter([
             },
             {
                 path: 'updateCar/:id',
-                element: <UpdateCar></UpdateCar>,
+                element: <PrivateRoute><UpdateCar></UpdateCar></PrivateRoute>,
                 loader: ({ params }) => fetch(`http://localhost:5000/cars/${params.id}`)
 
             }
