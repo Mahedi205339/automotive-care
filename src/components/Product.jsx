@@ -48,7 +48,7 @@ const Product = ({ product }) => {
                     <p>${price}</p>
                     <div className="card-actions justify-center ">
                         <Link to={`/carsDetails/${_id}`}><button className=" bg-black border border-red-700 hover:bg-red-600 hover:text-white font-bold px-4 md:px-4 py-1 md:py-2 rounded-lg">Details</button></Link>
-                        <Link to={`/updateCar/${_id}`}>
+                        <Link to={`updateCar/${_id}`}>
                             <button className=" bg-black border border-red-700 hover:bg-red-600 hover:text-white font-bold px-4 md:px-4 py-1 md:py-2 rounded-lg">Update</button></Link>
                         <button onClick={() => handleDelete(_id)} className=" bg-black border border-red-700 hover:bg-red-600 hover:text-white font-bold px-4 md:px-4 py-1 md:py-2 rounded-lg">Delete</button>
 
