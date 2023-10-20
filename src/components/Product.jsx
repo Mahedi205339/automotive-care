@@ -19,7 +19,7 @@ const Product = ({ products, product, setProducts }) => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/cars/${_id}`, {
+                fetch(`https://automotive-server-aseat6ozv-mahedis-projects.vercel.app/cars/${_id}`, {
                     method: 'DELETE'
 
                 })
