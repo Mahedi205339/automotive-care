@@ -18,7 +18,7 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('https://automotive-server-aseat6ozv-mahedis-projects.vercel.app/cars')
+                loader: () => fetch('https://automotive-server-9mwwj9le3-mahedis-projects.vercel.app/cars')
             },
             {
                 path: '/login',
@@ -27,7 +27,7 @@ const router = createBrowserRouter([
             {
                 path: 'carsDetails/:id',
                 element: <PrivateRoute><Details></Details></PrivateRoute>,
-                loader: () => fetch('https://automotive-server-aseat6ozv-mahedis-projects.vercel.app/cars')
+                loader: () => fetch('https://automotive-server-9mwwj9le3-mahedis-projects.vercel.app/cars')
             },
             {
                 path: '/addCar',
@@ -40,7 +40,7 @@ const router = createBrowserRouter([
             {
                 path: 'updateCar/:id',
                 element: <PrivateRoute><UpdateCar></UpdateCar></PrivateRoute>,
-                loader: ({ params }) => fetch(`https://automotive-server-aseat6ozv-mahedis-projects.vercel.app/${params.id}`)
+                loader: ({ params }) => fetch(`https://automotive-server-9mwwj9le3-mahedis-projects.vercel.app/${params.id}`)
 
             }
 
