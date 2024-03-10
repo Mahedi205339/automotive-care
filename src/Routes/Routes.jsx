@@ -1,48 +1,31 @@
 import { createBrowserRouter } from "react-router-dom";
-import Root from "../Root";
 import Home from "../pages/Home/Home";
 import ErrorPage from "./ErrorPage";
 import Login from "../pages/Login/Login";
 import Registration from "../pages/Registation/Registration";
-import AddCar from "../pages/AddCar/AddCar";
-import Details from "../components/Details";
-import UpdateCar from "../pages/UpdateCar/UpdateCar";
-import PrivateRoute from "./PrivateRoute";
+import Layout from "../Layout/Layout";
+// import PrivateRoute from "./PrivateRoute";
 
 
 const router = createBrowserRouter([
     {
         path: '/',
-        element: <Root></Root>,
+        element: <Layout />,
         children: [
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:5000/cars')
+
             },
             {
                 path: '/login',
                 element: <Login></Login>
             },
-            {
-                path: 'carsDetails/:id',
-                element: <PrivateRoute><Details></Details></PrivateRoute>,
-                loader: () => fetch('http://localhost:5000/cars')
-            },
-            {
-                path: '/addCar',
-                element: <PrivateRoute><AddCar></AddCar></PrivateRoute>
-            },
+
             {
                 path: '/register',
                 element: <Registration></Registration>
             },
-            {
-                path: 'updateCar/:id',
-                element: <PrivateRoute><UpdateCar></UpdateCar></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/${params.id}`)
-
-            }
 
         ],
         errorElement: <ErrorPage></ErrorPage>

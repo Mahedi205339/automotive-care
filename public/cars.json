@@ -1,6 +1,5 @@
 [
     {
-        "id": 1,
         "title": "Mercedes E-Class",
         "description": "The Mercedes E-Class is the epitome of luxury and performance. This sleek sedan combines cutting-edge technology with unparalleled comfort, making every drive a joyous experience. With its refined interior, advanced safety features, and powerful V6 engine, the E-Class offers a driving experience like no other. Whether cruising through city streets or embarking on long journeys, the Mercedes E-Class delivers style, sophistication, and unrivaled performance.",
         "brand": "Mercedes",
@@ -14,7 +13,6 @@
         "category": "cars"
     },
     {
-        "id": 2,
         "title": "BMW X5",
         "description": "The BMW X5 redefines the SUV segment with its perfect blend of sportiness and utility. Crafted with precision engineering and luxurious appointments, the X5 offers a driving experience that is both dynamic and versatile. From its sleek exterior design to its spacious and opulent interior, every aspect of the X5 exudes sophistication and refinement. Equipped with a powerful Inline-6 engine and advanced technology features, the BMW X5 is ready to conquer any terrain with style and grace.",
         "brand": "BMW",
@@ -28,7 +26,6 @@
         "category": "cars"
     },
     {
-        "id": 3,
         "title": "Honda Civic",
         "description": "The Honda Civic is more than just a compact car; it's a testament to reliability, efficiency, and innovation. With its sleek and sporty design, the Civic stands out on the road while delivering exceptional fuel efficiency and agile handling. Whether navigating through city streets or cruising on the highway, the Civic offers a comfortable and engaging driving experience. Packed with advanced technology and safety features, the Honda Civic is the perfect blend of style and practicality.",
         "brand": "Honda",
@@ -42,7 +39,6 @@
         "category": "cars"
     },
     {
-        "id": 4,
         "title": "Audi A4",
         "description": "Experience the pinnacle of luxury and performance with the Audi A4 sedan. Combining sophisticated design with advanced technology, the A4 offers a driving experience that is both exhilarating and refined. From its elegant exterior to its meticulously crafted interior, every detail of the A4 reflects Audi's commitment to excellence. With its powerful V4 engine and precise handling, the A4 delivers dynamic performance while providing a comfortable and serene ride. Elevate your driving experience with the Audi A4.",
         "brand": "Audi",
@@ -56,7 +52,6 @@
         "category": "cars"
     },
     {
-        "id": 5,
         "title": "Tesla Model S",
         "description": "The Tesla Model S revolutionizes the automotive industry with its groundbreaking all-electric design and cutting-edge technology. This luxury sedan offers unparalleled performance, with instant acceleration and whisper-quiet operation. Equipped with advanced autopilot capabilities, the Model S takes the stress out of driving, allowing you to relax and enjoy the journey. With its sleek and futuristic exterior, spacious interior, and impressive range, the Tesla Model S sets the standard for electric vehicles.",
         "brand": "Tesla",
@@ -70,7 +65,6 @@
         "category": "cars"
     },
     {
-        "id": 6,
         "title": "Lamborghini Aventador",
         "description": "Unleash your inner speed demon with the Lamborghini Aventador, a supercar that defies expectations and leaves others in the dust. With its jaw-dropping design and blistering performance, the Aventador is sure to turn heads wherever you go. Powered by a monstrous V12 engine, this Italian masterpiece delivers heart-pounding acceleration and razor-sharp handling. Whether tearing up the track or cruising the open road, the Lamborghini Aventador offers an exhilarating driving experience that is second to none.",
         "brand": "Lamborghini",
@@ -84,7 +78,6 @@
         "category": "cars"
     },
     {
-        "id": 7,
         "title": "Mercedes C-Class",
         "description": "The Mercedes C-Class is the perfect combination of luxury, style, and performance. With its sleek and sophisticated design, this compact luxury sedan exudes elegance from every angle. Step inside the C-Class, and you'll be greeted by a meticulously crafted interior that offers the utmost comfort and convenience. Equipped with a powerful Inline-4 engine, the C-Class delivers impressive performance while maintaining excellent fuel efficiency. Whether cruising through city streets or embarking on long journeys, the Mercedes C-Class is sure to leave a lasting impression.",
         "brand": "Mercedes",
@@ -98,7 +91,6 @@
         "category": "cars"
     },
     {
-        "id": 8,
         "title": "BMW 3 Series",
         "description": "Experience the ultimate driving pleasure with the BMW 3 Series, a sedan that combines athleticism with luxury. With its dynamic design and agile handling, the 3 Series is engineered to thrill at every turn. Step inside, and you'll discover a spacious and opulent interior that pampers occupants with premium materials and advanced technology. Powered by a responsive Inline-4 engine, the 3 Series delivers exhilarating performance while maintaining impressive fuel efficiency. Elevate your driving experience with the BMW 3 Series.",
         "brand": "BMW",
@@ -112,7 +104,6 @@
         "category": "cars"
     },
     {
-        "id": 9,
         "title": "Honda Accord",
         "description": "The Honda Accord is a midsize sedan that offers an exceptional blend of comfort, performance, and reliability. With its sleek and aerodynamic design, the Accord cuts through the air with ease, providing a smooth and efficient ride. Inside the cabin, you'll find a spacious and well-appointed interior that's perfect for both short commutes and long road trips. Equipped with a responsive Inline-4 engine, the Accord delivers lively acceleration and impressive fuel efficiency. Discover the joy of driving with the Honda Accord.",
         "brand": "Honda",
@@ -126,7 +117,6 @@
         "category": "cars"
     },
     {
-        "id": 10,
         "title": "Audi Q5",
         "description": "Indulge in luxury and versatility with the Audi Q5, a premium SUV that excels in both style and performance. With its striking design and spacious interior, the Q5 offers a first-class driving experience for you and your passengers. Whether navigating through city streets or exploring off-road terrain, the Q5 delivers smooth and confident handling in any situation. Equipped with a powerful Inline-4 engine, the Q5 provides ample power while maintaining impressive fuel efficiency. Elevate your daily drive with the Audi Q5.",
         "brand": "Audi",
@@ -140,7 +130,6 @@
         "category": "cars"
     },
     {
-        "id": 11,
         "title": "Tesla Model 3",
         "description": "Experience the future of driving with the Tesla Model 3, an all-electric sedan that redefines the automotive industry. With its sleek and minimalist design, the Model 3 stands out on the road while offering exceptional performance and efficiency. Step inside the spacious and modern interior, and you'll be greeted by advanced technology features that enhance every aspect of your driving experience. Powered by a responsive electric motor, the Model 3 delivers instant acceleration and whisper-quiet operation. Join the electric revolution with the Tesla Model 3.",
         "brand": "Tesla",
@@ -154,7 +143,6 @@
         "category": "cars"
     },
     {
-        "id": 12,
         "title": "Lamborghini Huracan",
         "description": "Prepare to be amazed by the Lamborghini Huracan, a supercar that pushes the boundaries of performance and design. With its striking exterior and luxurious interior, the Huracan is sure to turn heads wherever you go. Powered by a ferocious V10 engine, this Italian masterpiece delivers exhilarating acceleration and razor-sharp handling. Whether tearing up the track or cruising the open road, the Lamborghini Huracan offers an adrenaline-fueled driving experience that is unmatched by any other car.",
         "brand": "Lamborghini",
@@ -168,7 +156,6 @@
         "category": "cars"
     },
     {
-        "id": 13,
         "title": "Mercedes GLE",
         "description": "Conquer the road with confidence in the Mercedes GLE, a luxury SUV that blends style, comfort, and performance. With its bold and muscular design, the GLE commands attention wherever it goes. Step inside the spacious and luxurious cabin, and you'll find premium materials and advanced technology features that enhance every drive. Equipped with a powerful V6 engine, the GLE delivers thrilling performance while maintaining excellent fuel efficiency. Whether navigating city streets or tackling off-road terrain, the Mercedes GLE is ready for any adventure.",
         "brand": "Mercedes",
@@ -182,7 +169,6 @@
         "category": "cars"
     },
     {
-        "id": 14,
         "title": "BMW 5 Series",
         "description": "Experience the pinnacle of luxury and performance with the BMW 5 Series, a sedan that sets the standard for excellence. With its elegant design and advanced technology, the 5 Series offers a driving experience that is both exhilarating and refined. Step inside the spacious and opulent interior, and you'll find premium materials and cutting-edge features that cater to your every need. Powered by a responsive Inline-6 engine, the 5 Series delivers dynamic performance while maintaining impressive fuel efficiency. Elevate your driving experience with the BMW 5 Series.",
         "brand": "BMW",
@@ -196,7 +182,6 @@
         "category": "cars"
     },
     {
-        "id": 15,
         "title": "Honda CR-V",
         "description": "Discover the perfect blend of comfort and capability with the Honda CR-V, a versatile SUV that is ready for any adventure. With its sleek and aerodynamic design, the CR-V stands out on the road while offering excellent fuel efficiency and agile handling. Step inside the spacious and well-appointed cabin, and you'll find ample room for passengers and cargo alike. Equipped with a responsive Inline-4 engine, the CR-V delivers lively performance while maintaining impressive fuel efficiency. Whether navigating city streets or exploring off-road trails, the Honda CR-V is the ideal companion for your next journey.",
         "brand": "Honda",
@@ -210,7 +195,6 @@
         "category": "cars"
     },
     {
-        "id": 16,
         "title": "Audi A6",
         "description": "Experience luxury and sophistication with the Audi A6, a sedan that combines elegance with performance. With its sleek and aerodynamic design, the A6 exudes confidence and style from every angle. Step inside the spacious and luxurious cabin, and you'll find premium materials and advanced technology features that cater to your every need. Equipped with a powerful V6 engine, the A6 delivers exhilarating performance while maintaining excellent fuel efficiency. Elevate your driving experience with the Audi A6.",
         "brand": "Audi",
@@ -224,7 +208,6 @@
         "category": "cars"
     },
     {
-        "id": 17,
         "title": "Tesla Model X",
         "description": "Experience the future of transportation with the Tesla Model X, an all-electric SUV that combines revolutionary design with cutting-edge technology. With its distinctive falcon-wing doors and sleek exterior, the Model X stands out on the road while offering unmatched performance and versatility. Step inside the spacious and luxurious cabin, and you'll find premium materials and advanced features that enhance every aspect of your driving experience. Powered by a responsive electric motor, the Model X delivers instant acceleration and quiet operation. Join the electric revolution with the Tesla Model X.",
         "brand": "Tesla",
@@ -238,7 +221,6 @@
         "category": "cars"
     },
     {
-        "id": 18,
         "title": "Lamborghini Urus",
         "description": "Unleash the beast within with the Lamborghini Urus, an SUV that redefines the concept of performance. With its aggressive design and powerful engine, the Urus is equally at home on the track or the open road. Step inside the luxurious and spacious cabin, and you'll find premium materials and cutting-edge technology features that enhance every aspect of your driving experience. Equipped with a ferocious V8 engine, the Urus delivers heart-pounding acceleration and razor-sharp handling. Dominate the road with the Lamborghini Urus.",
         "brand": "Lamborghini",
@@ -252,7 +234,6 @@
         "category": "cars"
     },
     {
-        "id": 19,
         "title": "Mercedes GLC",
         "description": "Discover the perfect blend of luxury and versatility with the Mercedes GLC, a compact SUV that excels in every situation. With its sleek and sophisticated design, the GLC commands attention on the road while offering a spacious and comfortable interior. Step inside, and you'll find premium materials and advanced technology features that cater to your every need. Equipped with a powerful Inline-4 engine, the GLC delivers dynamic performance while maintaining excellent fuel efficiency. Whether navigating city streets or exploring off-road trails, the Mercedes GLC is ready for any adventure.",
         "brand": "Mercedes",
@@ -266,7 +247,6 @@
         "category": "cars"
     },
     {
-        "id": 20,
         "title": "BMW 7 Series",
         "description": "Experience the pinnacle of luxury and sophistication with the BMW 7 Series, a sedan that sets the standard for excellence. With its elegant design and opulent interior, the 7 Series offers a driving experience that is truly unforgettable. Step inside, and you'll find premium materials and advanced technology features that cater to your every need. Equipped with a powerful V8 engine, the 7 Series delivers smooth and effortless performance while maintaining impressive fuel efficiency. Elevate your driving experience with the BMW 7 Series.",
         "brand": "BMW",
@@ -280,7 +260,6 @@
         "category": "cars"
     },
     {
-        "id": 21,
         "title": "Honda Pilot",
         "description": "Embark on your next adventure with confidence in the Honda Pilot, a spacious and versatile SUV that is ready for anything. With its rugged design and powerful engine, the Pilot is equally at home on city streets or off-road trails. Step inside the spacious and comfortable cabin, and you'll find seating for up to eight passengers and ample cargo space for all your gear. Equipped with a responsive V6 engine, the Pilot delivers smooth and capable performance while maintaining excellent fuel efficiency. Whether exploring new terrain or navigating through city traffic, the Honda Pilot is the perfect companion for your next journey.",
         "brand": "Honda",
@@ -294,7 +273,6 @@
         "category": "cars"
     },
     {
-        "id": 22,
         "title": "Audi Q7",
         "description": "Experience luxury and versatility in the Audi Q7, a premium SUV that excels in both style and performance. With its striking design and spacious interior, the Q7 offers a first-class driving experience for you and your passengers. Whether navigating through city streets or embarking on a road trip, the Q7 delivers smooth and confident handling in any situation. Equipped with a powerful V6 engine, the Q7 provides ample power while maintaining impressive fuel efficiency. Elevate your daily drive with the Audi Q7.",
         "brand": "Audi",
@@ -308,7 +286,6 @@
         "category": "cars"
     },
     {
-        "id": 23,
         "title": "Tesla Model Y",
         "description": "Discover the future of transportation with the Tesla Model Y, an all-electric SUV that combines performance, versatility, and sustainability. With its sleek and aerodynamic design, the Model Y stands out on the road while offering impressive range and acceleration. Step inside the spacious and modern interior, and you'll find seating for up to seven passengers and ample cargo space for all your gear. Equipped with a responsive electric motor, the Model Y delivers instant acceleration and quiet operation. Join the electric revolution with the Tesla Model Y.",
         "brand": "Tesla",
@@ -322,7 +299,6 @@
         "category": "cars"
     },
     {
-        "id": 24,
         "title": "Lamborghini Gallardo",
         "description": "Prepare to be mesmerized by the Lamborghini Gallardo, a supercar that epitomizes speed, power, and style. With its aggressive design and thunderous engine, the Gallardo is a force to be reckoned with on the road. Step inside the luxurious and driver-focused cabin, and you'll find premium materials and cutting-edge technology features that enhance every aspect of your driving experience. Equipped with a ferocious V10 engine, the Gallardo delivers heart-pounding acceleration and razor-sharp handling. Dominate the road with the Lamborghini Gallardo.",
         "brand": "Lamborghini",
@@ -336,7 +312,6 @@
         "category": "cars"
     },
     {
-        "id": 25,
         "title": "Mercedes S-Class",
         "description": "Experience the pinnacle of automotive luxury with the Mercedes S-Class, a sedan that defines sophistication and elegance. With its timeless design and opulent interior, the S-Class offers a driving experience that is truly unparalleled. Step inside, and you'll find premium materials and state-of-the-art technology features that cater to your every need. Equipped with a powerful V8 engine, the S-Class delivers smooth and effortless performance while maintaining impressive fuel efficiency. Elevate your driving experience with the Mercedes S-Class.",
         "brand": "Mercedes",
@@ -350,7 +325,6 @@
         "category": "cars"
     },
     {
-        "id": 26,
         "title": "BMW X3",
         "description": "Experience luxury and versatility in the BMW X3, a compact SUV that offers the perfect blend of style and performance. With its sleek and athletic design, the X3 stands out on the road while offering impressive handling and agility. Step inside the spacious and well-appointed cabin, and you'll find premium materials and advanced technology features that cater to your every need. Equipped with a responsive Inline-4 engine, the X3 delivers dynamic performance while maintaining excellent fuel efficiency. Elevate your driving experience with the BMW X3.",
         "brand": "BMW",
@@ -364,7 +338,6 @@
         "category": "cars"
     },
     {
-        "id": 27,
         "title": "Honda Odyssey",
         "description": "Make every family outing an adventure with the Honda Odyssey, a minivan that redefines comfort and convenience. With its spacious and flexible interior, the Odyssey offers seating for up to eight passengers and ample cargo space for all your gear. Step inside the well-appointed cabin, and you'll find premium materials and advanced technology features that cater to your every need. Equipped with a responsive V6 engine, the Odyssey delivers smooth and capable performance while maintaining excellent fuel efficiency. Whether running errands or embarking on a road trip, the Honda Odyssey is the perfect companion for your family's journey.",
         "brand": "Honda",
@@ -378,7 +351,6 @@
         "category": "cars"
     },
     {
-        "id": 28,
         "title": "Audi A8",
         "description": "Experience luxury and refinement in the Audi A8, a sedan that embodies sophistication and elegance. With its sleek and timeless design, the A8 exudes confidence and style from every angle. Step inside the spacious and luxurious cabin, and you'll find premium materials and cutting-edge technology features that cater to your every need. Equipped with a powerful V8 engine, the A8 delivers smooth and effortless performance while maintaining impressive fuel efficiency. Elevate your driving experience with the Audi A8.",
         "brand": "Audi",
@@ -392,7 +364,6 @@
         "category": "cars"
     },
     {
-        "id": 29,
         "title": "Tesla Roadster",
         "description": "Unleash the future of performance with the Tesla Roadster, an all-electric sports car that defies expectations and leaves others in the dust. With its sleek and aerodynamic design, the Roadster stands out on the road while offering unmatched speed and agility. Step inside the driver-focused cockpit, and you'll find premium materials and advanced technology features that enhance every aspect of your driving experience. Equipped with a responsive electric motor, the Roadster delivers instant acceleration and blistering speed. Join the electric revolution with the Tesla Roadster.",
         "brand": "Tesla",
@@ -406,7 +377,6 @@
         "category": "cars"
     },
     {
-        "id": 30,
         "title": "Lamborghini Veneno",
         "description": "Prepare to be dazzled by the Lamborghini Veneno, a hypercar that pushes the boundaries of speed and style. With its futuristic design and breathtaking performance, the Veneno is a work of art on wheels. Step inside the luxurious and driver-focused cockpit, and you'll find premium materials and cutting-edge technology features that enhance every aspect of your driving experience. Equipped with a ferocious V12 engine, the Veneno delivers heart-pounding acceleration and razor-sharp handling. Dominate the road with the Lamborghini Veneno.",
         "brand": "Lamborghini",
@@ -420,7 +390,6 @@
         "category": "cars"
     },
     {
-        "id": 31,
         "title": "Lamborghini Veneno",
         "description": "Prepare to be dazzled by the Lamborghini Veneno, a hypercar that pushes the boundaries of speed and style. With its futuristic design and breathtaking performance, the Veneno is a work of art on wheels. Step inside the luxurious and driver-focused cockpit, and you'll find premium materials and cutting-edge technology features that enhance every aspect of your driving experience. Equipped with a ferocious V12 engine, the Veneno delivers heart-pounding acceleration and razor-sharp handling. Dominate the road with the Lamborghini Veneno.",
         "brand": "Lamborghini",
@@ -434,7 +403,6 @@
         "category": "featured"
     },
     {
-        "id": 32,
         "title": "Lamborghini SC20",
         "description": "Prepare to be dazzled by the Lamborghini SC20, a hypercar that pushes the boundaries of speed and style. With its futuristic design and breathtaking performance, the Veneno is a work of art on wheels. Step inside the luxurious and driver-focused cockpit, and you'll find premium materials and cutting-edge technology features that enhance every aspect of your driving experience. Equipped with a ferocious V12 engine, the Veneno delivers heart-pounding acceleration and razor-sharp handling. Dominate the road with the Lamborghini Veneno.",
         "brand": "Lamborghini",
@@ -448,7 +416,6 @@
         "category": "featured"
     },
     {
-        "id": 33,
         "title": "Mercedes Benz",
         "description": "Prepare to be dazzled by the Mercedes, a hypercar that pushes the boundaries of speed and style. With its futuristic design and breathtaking performance, the Veneno is a work of art on wheels. Step inside the luxurious and driver-focused cockpit, and you'll find premium materials and cutting-edge technology features that enhance every aspect of your driving experience. Equipped with a ferocious V12 engine, the Veneno delivers heart-pounding acceleration and razor-sharp handling. Dominate the road with the Lamborghini Veneno.",
         "brand": "Mercedes",
@@ -462,7 +429,6 @@
         "category": "featured"
     },
     {
-        "id": 34,
         "title": "Tesla Model 3",
         "description": "Prepare to be dazzled by the Lamborghini Veneno, a hypercar that pushes the boundaries of speed and style. With its futuristic design and breathtaking performance, the Veneno is a work of art on wheels. Step inside the luxurious and driver-focused cockpit, and you'll find premium materials and cutting-edge technology features that enhance every aspect of your driving experience. Equipped with a ferocious V12 engine, the Veneno delivers heart-pounding acceleration and razor-sharp handling. Dominate the road with the Lamborghini Veneno.",
         "brand": "Lamborghini",
