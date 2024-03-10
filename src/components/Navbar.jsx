@@ -51,8 +51,11 @@ const Navbar = () => {
     </>
 
     return (
-        <div className="navbar mb-4">
-            <div className="navbar-start">
+        <div className="navbar mb-4 fixed z-20 bg-black ">
+
+
+
+            <div className="navbar-start ">
                 <div className="dropdown">
                     <label tabIndex={0} className="bt btn-ghost lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M4 6h16M4 12h8m-8 6h16" /></svg>
@@ -81,7 +84,7 @@ const Navbar = () => {
                     user ? <button onClick={handleLogOut} className=" font-semibold px-2 py-1 lg:px-4 lg:py-2 rounded bg-red-600 border-collapse text-white">Log out</button> : null
                 }
 
-            </div>
+            </div> 
         </div>
     );
 };

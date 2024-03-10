@@ -20,6 +20,7 @@ const Home = () => {
             <Comments></Comments>
             <BlogPost></BlogPost>
             <ContactUs></ContactUs>
+            <Comments></Comments>
         </div>
     );
 };

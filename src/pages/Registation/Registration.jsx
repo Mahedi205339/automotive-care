@@ -45,12 +45,9 @@ const Register = () => {
             })
     }
 
-
-
-
     return (
         <div>
-            <div className="hero-content flex-col  w-full mx-auto">
+s            <div className="hero-content flex-col  w-full mx-auto">
 
                 {
                     error && < p className="text-red-600 font-bold">{error}</p>
