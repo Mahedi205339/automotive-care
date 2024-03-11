@@ -14,8 +14,6 @@ import { Autoplay } from 'swiper/modules';
 const Banner = () => {
     return (
         <>
-
-
             <Swiper
                 slidesPerView={1}
                 spaceBetween={30}
@@ -33,7 +31,7 @@ const Banner = () => {
                 <div>
                     <SwiperSlide>
                         <div id="slide1" className="carousel-item relative w-full">
-                            <div className="hero h-[100vh] md:h-[80vh]" style={{ backgroundImage: `url(${banner1})` }}>
+                            <div className="hero h-[100vh] " style={{ backgroundImage: `url(${banner1})` }}>
                                 <div className="hero-overlay bg-black opacity-60"></div>
                                 <div className="hero-content text-left text-neutral-content">
                                     <div className="">
@@ -65,7 +63,7 @@ const Banner = () => {
                     </SwiperSlide>
                     <SwiperSlide>
                         <div id="slide1" className="carousel-item relative w-full">
-                            <div className="hero h-[100vh] md:h-[80vh]"style={{ backgroundImage: `url(${banner2})` }}>
+                            <div className="hero h-[100vh] "style={{ backgroundImage: `url(${banner2})` }}>
                                 <div className="hero-overlay bg-black opacity-60"></div>
                                 <div className="hero-content text-left text-neutral-content">
                                     <div className="">
@@ -97,7 +95,7 @@ const Banner = () => {
                     </SwiperSlide>
                     <SwiperSlide>
                         <div id="slide1" className="carousel-item relative w-full">
-                            <div className="hero h-[100vh] md:h-[80vh]" style={{ backgroundImage: `url(${banner3})` }}>
+                            <div className="hero h-[100vh] " style={{ backgroundImage: `url(${banner3})` }}>
                                 <div className="hero-overlay bg-black opacity-60"></div>
                                 <div className="hero-content text-left text-neutral-content">
                                     <div className="">
@@ -129,7 +127,7 @@ const Banner = () => {
                     </SwiperSlide>
                     <SwiperSlide>
                         <div id="slide1" className="carousel-item relative w-full">
-                            <div className="hero h-[100vh] md:h-[80vh]" style={{ backgroundImage: `url(${banner4})` }}>
+                            <div className="hero h-[100vh] " style={{ backgroundImage: `url(${banner4})` }}>
                                 <div className="hero-overlay bg-black opacity-60"></div>
                                 <div className="hero-content text-left text-neutral-content">
                                     <div className="">
