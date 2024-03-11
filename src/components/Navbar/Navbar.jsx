@@ -1,8 +1,9 @@
 import { NavLink } from "react-router-dom";
-import carlogo from '../../assets/images/carlogo.png'
-import { useContext } from "react";
-import userLogo from '../../assets/images/user.png'
+import { MdOutlineMenu } from "react-icons/md";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { RxCross2 } from "react-icons/rx";
+import './navbar.css'
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext)
     console.log(user)
@@ -14,12 +15,26 @@ const Navbar = () => {
             .catch(error => console.error(error))
     }
 
+    // const [menuOpen, setMenuOpen] = useState(false)
+    // console.log(menuOpen);.
+    const [active, setActive] = useState("nav__menu");
+    const [icon, setIcon] = useState("nav__toggler");
+    const navToggle = () => {
+        if (active === "nav__menu") {
+            setActive("nav__menu nav__active");
+        } else setActive("nav__menu");
+
+        // Icon Toggler
+        if (icon === "nav__toggler") {
+            setIcon("nav__toggler toggle");
+        } else setIcon("nav__toggler");
+    };
 
     const navLink = <>
         <li> <NavLink
             to="/"
             className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "bg-red-600" : ""
+                isPending ? "pending" : isActive ? "bg-red-600 px-3 py-2 rounded-lg" : ""
             }
         >
             Home
@@ -53,14 +68,20 @@ const Navbar = () => {
     </>
 
     return (
-        <div className="navbar mb-4 fixed z-20 backdrop-blur-sm bg-neutral-800 bg-opacity-10">
-            <div>
-                <img width={200} src={carlogo} alt="" />
-            </div>
-            <div>
-
-            </div>
-
+        <div className="mb-4 w-full fixed z-20 backdrop-blur-sm bg-neutral-800 bg-opacity-10 ">
+            <nav className="nav">
+                <div>
+                    logo
+                </div>
+                <ul className={active}>
+                    {navLink}
+                </ul>
+                <div onClick={navToggle} className={icon}>
+                    <div className="line1"></div>
+                    <div className="line2"></div>
+                    <div className="line3"></div>
+                </div>
+            </nav>
 
         </div>
     );
