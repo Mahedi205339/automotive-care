@@ -1,8 +1,6 @@
 import { NavLink } from "react-router-dom";
-import { MdOutlineMenu } from "react-icons/md";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
-import { RxCross2 } from "react-icons/rx";
 import './navbar.css'
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext)
@@ -69,7 +67,7 @@ const Navbar = () => {
 
     return (
         <div className="mb-4 w-full fixed z-20 backdrop-blur-sm bg-neutral-800 bg-opacity-10 ">
-            <nav className="nav">
+            <nav className="nav my-2 md:my-3 lg:my-5 max-w-[1500px] mx-auto px-5 lg:px-8 md:px-7">
                 <div>
                     logo
                 </div>
