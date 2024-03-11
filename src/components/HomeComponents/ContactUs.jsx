@@ -1,7 +1,7 @@
 import { BsChevronDoubleDown, BsTelephone, BsClock, BsCalendarDate } from 'react-icons/bs';
 import { CiLocationOn } from 'react-icons/ci';
 import GoogleMapReact from 'google-map-react';
-import { googleAPIkey } from '../googleAPIKey';
+import { googleAPIkey } from '../../googleAPIKey';
 import PropTypes from 'prop-types';
 
 const AnyReactComponent = ({ text }) => <div>{text}</div>;

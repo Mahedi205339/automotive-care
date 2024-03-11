@@ -1,9 +1,9 @@
 
-import Banner from "../../components/Banner";
-import Info from "../../components/Info";
-import Comments from "../../components/Comments";
-import BlogPost from "../../components/BlogPost";
-import ContactUs from "../../components/ContactUs";
+import Banner from "../../components/HomeComponents/Banner";
+import BlogPost from "../../components/HomeComponents/BlogPost";
+import Comments from "../../components/HomeComponents/Comments";
+import ContactUs from "../../components/HomeComponents/ContactUs";
+import Info from "../../components/HomeComponents/Info";
 import FeaturedCars from "../../components/featuredCars/FeaturedCars";
 
 

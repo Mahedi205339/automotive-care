@@ -1,5 +1,5 @@
-import slidePic1 from '../assets/images/banner2.png'
-import slidePic2 from '../assets/images/car2.png'
+import slidePic1 from '../../assets/images/banner2.png'
+import slidePic2 from '../../assets/images/car2.png'
 const BlogPost = () => {
     return (
         <div className='max-w-7xl mx-auto'>

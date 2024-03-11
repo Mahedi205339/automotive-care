@@ -1,5 +1,5 @@
-import backImg from '../assets/images/backimg.png'
-import memberimg from '../assets/images/member3.png'
+import backImg from '../../assets/images/backimg.png'
+import memberimg from '../../assets/images/member3.png'
 import { BsRocketTakeoffFill ,BsFillCreditCardFill ,BsPersonLinesFill} from 'react-icons/bs'
 const Comments = () => {
     return (

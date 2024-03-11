@@ -2,10 +2,10 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import banner1 from "../assets/images/banner2.png"
-import banner2 from "../assets/images/banner1.png"
-import banner3 from "../assets/images/banner3.png"
-import banner4 from "../assets/images/banner4.png"
+import banner1 from "../../assets/images/banner2.png"
+import banner2 from "../../assets/images/banner1.png"
+import banner3 from "../../assets/images/banner3.png"
+import banner4 from "../../assets/images/banner4.png"
 
 
 // import required modules

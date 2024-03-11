@@ -1,4 +1,4 @@
-import img1 from '../assets/images/img1.png'
+import img1 from '../../assets/images/img1.png'
 const Info = () => {
     return (
         <div className='max-w-7xl mx-auto'>
