@@ -4,6 +4,7 @@ import FeaturedCarousel from "./FeaturedCarousel";
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import './featureCard.css'
+import { Link } from "react-router-dom";
 const FeaturedCars = () => {
     const [cars] = useCars();
     // console.log(cars);
@@ -33,7 +34,7 @@ const FeaturedCars = () => {
 
     return (
 
-        <div className=" md:my-10 lg:my-16">
+        <div  className=" md:my-10 lg:my-16">
             <Heading title={"Featured"}
                 sideTitle={"Products"}
             />
@@ -41,35 +42,44 @@ const FeaturedCars = () => {
             <div className="xl:max-w-[1560px] mx-auto  px-4">
                 <div id='card-area' className="">
                     <div className='wrapper gap-6'>
-                    <Carousel
-                        autoPlay={true}
-                        autoPlaySpeed={2000}
-                        keyBoardControl={true}
-                        transitionDuration={2500}
-                        containerClass="carousel-container"
-                        removeArrowOnDeviceType={["tablet", "mobile"]}
-                        responsive={responsive}
-                        itemClass="carousel-item"
-                    >
-                        {
+                        <Carousel
+                            autoPlay={true}
+                            autoPlaySpeed={2000}
+                            keyBoardControl={true}
+                            transitionDuration={2500}
+                            containerClass="carousel-container"
+                            removeArrowOnDeviceType={["tablet", "mobile"]}
+                            responsive={responsive}
+                            itemClass="carousel-item"
+                        >
+                            {
 
-                            featuredCars.map(item =>
-                                <FeaturedCarousel key={item?._id}
-                                    item={item}
-                                />
-                            )
-                        }
+                                featuredCars.map(item =>
+                                    <FeaturedCarousel key={item?._id}
+                                        item={item}
+                                    />
+                                )
+                            }
 
-                    </Carousel>
+                        </Carousel>
 
+                    </div>
                 </div>
             </div>
-        </div>
+            <div  className="flex justify-center ">
+                <Link to="/cars">
 
-            </div >
+                    <button className=" rounded-lg bg-neutral-900 border-red-500 text-xl border-2 text-red-600 hover:shadow-xl font-semibold hover:text-white hover:bg-red-600 hover:shadow-red-600 py-2 px-5 md:py-4 md:px-8 ">
+                        All Cars
+                    </button>
+                </Link>
+
+            </div>
+
+        </div >
 
 
-            );
+    );
 };
 
 export default FeaturedCars;

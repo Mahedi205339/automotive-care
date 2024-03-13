@@ -30,18 +30,14 @@ const Cars = () => {
                 </div>
                 <div className="">
                     <div className="xl:max-w-[1400px] px-4 mx-auto flex flex-col-reverse md:flex-row md:justify-between items-center gap-3">
-                        {
-                            showCars.length === 0 ?
-                                <h2>Total find cars {allCars.length}</h2> :
-                                <h2>Total find cars {showCars.length}</h2>
-                        }
+
 
                         {/* <select name="" id=""></select> */}
 
                         <div>
                             <div>
 
-                                <select onChange={(e) => setBrands(e?.target?.value)} className="select select-error text-xl w-96 bg-neutral-700">
+                                <select onChange={(e) => setBrands(e?.target?.value)} className="select select-error text-xl w-96 h-16 bg-neutral-700">
                                     <option disabled selected>Brands</option>
                                     <option value="">All Cars</option>
                                     <option value="BMW">BMW</option>
@@ -56,8 +52,14 @@ const Cars = () => {
 
                         </div>
                         <div>
-                            <input onChange={(e) => setSearch(e.target.value)} type="text" placeholder="Search by Car name" className="input bg-neutral-700 input-bordered text-xl input-error w-96" />
+
+                            <input onChange={(e) => setSearch(e.target.value)} type="text" placeholder="Search by Car name" className="input bg-neutral-700 input-bordered text-xl h-16 input-error w-96" />
                         </div>
+                        {
+                            showCars.length === 0 ?
+                                <h2 className="text-2xl md:text-4xl lg:text-5xl text-red-600 font-semibold">Total find cars {allCars.length}</h2> :
+                                <h2 className="text-2xl md:text-4xl lg:text-5xl text-red-600 font-semibold">Total find cars {showCars.length}</h2>
+                        }
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3">
                         {
@@ -65,7 +67,9 @@ const Cars = () => {
                                 allCars?.filter((item) => {
                                     return search.toLowerCase() === '' ? item : item?.title?.toLowerCase().includes(search)
                                 }).map(item => <FeaturedCarousel item={item} key={item._id} />)
-                                : showCars.map(item => <FeaturedCarousel item={item} key={item._id} />)
+                                : showCars?.filter((item) => {
+                                    return search.toLowerCase() === '' ? item : item?.title?.toLowerCase().includes(search)
+                                }).map(item => <FeaturedCarousel item={item} key={item._id} />)
                         }
                     </div>
 

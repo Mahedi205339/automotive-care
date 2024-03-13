@@ -19,7 +19,7 @@ const Banner = () => {
                 spaceBetween={30}
                 centeredSlides={true}
                 autoplay={{
-                    delay: 2000,
+                    delay: 2500,
                     disableOnInteraction: false,
                 }}
                 pagination={{
@@ -34,8 +34,8 @@ const Banner = () => {
                             <div className="hero h-[100vh] " style={{ backgroundImage: `url(${banner1})` }}>
                                 <div className="hero-overlay bg-black opacity-60"></div>
                                 <div className="hero-content text-left text-neutral-content">
-                                    <div className="">
-                                        <h1 className="mb-5 text-2xl md:text-4xl lg:text-5xl font-bold">
+                                    <div  className="">
+                                        <h1 className="mb-5 text-2xl md:text-4xl lg:text-5xl font-bold xl:text-6xl my-5 md:my-7 lg:my-10">
                                             AUTOMOTIVE
                                             <span className="text-red-600">
                                                 CARE
