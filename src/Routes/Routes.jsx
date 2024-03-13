@@ -5,8 +5,7 @@ import Login from "../pages/Login/Login";
 import Registration from "../pages/Registation/Registration";
 import Layout from "../Layout/Layout";
 import Cars from "../pages/Cars/Cars";
-// import AddCars from "../pages/AddCars/AddCars";
-import CarsTab from "../pages/Cars/CarsTab";
+import AddCars from "../pages/AddCars/AddCars";
 // import PrivateRoute from "./PrivateRoute";
 
 
@@ -26,7 +25,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/add-cars',
-                element: <CarsTab/>
+                element: <AddCars/>
             },
             {
                 path: '/cars',

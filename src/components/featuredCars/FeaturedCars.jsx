@@ -38,7 +38,7 @@ const FeaturedCars = () => {
                 sideTitle={"Products"}
             />
 
-            <div className="xl:max-w-[1600px] mx-auto  px-4">
+            <div className="xl:max-w-[1560px] mx-auto  px-4">
                 <div id='card-area' className="">
                     <div className='wrapper gap-6'>
                     <Carousel
