@@ -4,11 +4,13 @@ import { useForm } from "react-hook-form";
 import useAuth from "../../hooks/useAuth";
 import { Link, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
-import axios from "axios";
 import { useState } from "react";
 import SocialLogin from '../../components/SocialLogin/SocialLogin';
+import { FaEye } from "react-icons/fa";
+import { FaEyeSlash } from "react-icons/fa";
+import { TbFidgetSpinner } from 'react-icons/tb'
 const Login = () => {
-    const { userLogin } = useAuth();
+    const { login , loading } = useAuth();
     const navigate = useNavigate();
     const {
         register,
@@ -31,11 +33,9 @@ const Login = () => {
         const password = data.password;
         console.log(email, password);
 
-        userLogin(email, password)
+        login(email, password)
             .then(() => {
                 toast.success("User Login Successfully");
-
-                axios.patch(`/monthly-user-count/${email}`).then((res) => res.data);
                 reset();
                 navigate("/");
             })
@@ -54,12 +54,12 @@ const Login = () => {
                     </div>
                     {/* form */}
                     <form onSubmit={handleSubmit(onSubmit)} className="card-body">
-                        
+
                         <div className="relative z-0 ">
                             <input
                                 {...register("email", { required: true })}
                                 type="email"
-                                name="from_name"
+                                name="email"
                                 className="peer block w-full appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-xl text-wh focus:border-red-600 focus:outline-none focus:ring-0"
 
                                 placeholder=" "
@@ -70,19 +70,71 @@ const Login = () => {
                             </label>
                         </div>
                         <div className="relative z-0 my-5">
-                            <input
-                                {...register("password", { required: true })}
-                                type="email"
-                                name="from_name"
-                                className="peer block w-full appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-xl text-white focus:border-red-600 focus:outline-none focus:ring-0"
-                                placeholder=" "
-                                required
-                            />
-                            <label className="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-xl text-neutral-400 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-red-600 peer-focus:dark:text-red-500">
-                                Your Password
-                            </label>
-                        </div>
+                            <div className="flex flex-row items-center">
+                                <input
+                                    {...register("password", {
+                                        required: true,
+                                        minLength: 8,
+                                        maxLength: 20,
+                                        pattern: /(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])/,
+                                    })}
+                                    type={showPassword ? "text" : "password"}
+                                    name="password"
+                                    className="peer block w-full appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-xl text-white focus:border-red-600 focus:outline-none focus:ring-0"
+                                    placeholder=" "
+                                />
+                                <button
+                                    onClick={togglePasswordVisibility}
+                                    className="relative -ml-16 z-50"
+                                >
+                                    {showPassword ? (
+                                        <FaEyeSlash className="text-[#ea3939]" size={20} />
+                                    ) : (
+                                        <FaEye className="text-[#ea3939]" size={20} />
+                                    )}
+                                </button>
+                                <label className="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-xl text-neutral-400 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-red-600 peer-focus:dark:text-red-500">
+                                    Your Password
+                                </label>
+                            </div>
 
+
+
+                        </div>
+                        <div className="text-center">
+                            {errors.name && (
+                                <span className="text-red-400 font-bold">
+                                    Password is required
+                                </span>
+                            )}
+                            {errors.password?.type === "minLength" && (
+                                <p className="text-red-400">
+                                    {" "}
+                                    Password must be 8 character
+                                </p>
+                            )}
+                            {errors.password?.type === "maxLength" && (
+                                <p className="text-red-400">
+                                    {" "}
+                                    Password must be less than 20 character
+                                </p>
+                            )}
+                            {errors.password?.type === "pattern" && (
+                                <p className="text-red-400">
+                                    {" "}
+                                    Password must have one uppercase , one lowercase and one
+                                    number
+                                </p>
+                            )}
+                        </div>
+                        <div className="flex justify-center ">
+                            <button
+                                type='submit'
+                                className='bg-red-600 w-1/3 rounded-md py-3 text-white'
+                            >
+                                {loading ? <TbFidgetSpinner className='animate-spin mx-auto' /> : 'Continue'}
+                            </button>
+                        </div>
                     </form>
 
 
