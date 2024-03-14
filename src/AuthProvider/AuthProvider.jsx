@@ -33,7 +33,7 @@ const AuthProvider = ({ children }) => {
             .catch(error => console.log(error.message))
     }
 
-    const signIn = (email, password) => {
+    const login = (email, password) => {
         setLoading(true)
         return signInWithEmailAndPassword(auth, email, password);
     }
@@ -59,7 +59,7 @@ const AuthProvider = ({ children }) => {
         user,
         createUser,
         logOut,
-        signIn,
+        login,
         loading,
         googleLogin,
 

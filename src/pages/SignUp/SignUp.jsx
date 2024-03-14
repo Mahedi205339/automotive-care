@@ -1,262 +1,174 @@
 /* eslint-disable react/no-unescaped-entities */
 import "./signUp.css";
-import { GoPasskeyFill, GoUpload } from "react-icons/go";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
-import axios from "axios";
-import SocialLogin from "../../components/SocialLogin/SocialLogin";
+import { useState } from "react";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
-import { useState } from "react";
-import axiosSecure from "../../api";
-import { MdOutlineMailLock } from "react-icons/md";
-import { IoIosPerson } from "react-icons/io";
 import useAuth from "../../hooks/useAuth";
-
-const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
-const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
-
+import useAxiosPublic from "../../hooks/useAxoisPublic";
+import SocialLogin from "../../components/SocialLogin/SocialLogin";
+import { TbFidgetSpinner } from 'react-icons/tb'
 const SignUp = () => {
-    const { createUser, userProfileUpdate } = useAuth();
+
+    const { createUser, loading, } = useAuth();
+    const axiosPublic = useAxiosPublic()
     const navigate = useNavigate();
-    const [imgTitle, setImgTitle] = useState("");
 
     const {
         register,
         handleSubmit,
         reset,
-        formState: { errors },
     } = useForm();
 
     // password toggle function
+
 
     const [showPassword, setShowPassword] = useState(false);
 
     const togglePasswordVisibility = () => {
         setShowPassword((prevShowPassword) => !prevShowPassword);
     };
-
-    const onSubmit = async (data, event) => {
+    const onSubmit = async (data) => {
         const name = data.name;
         const email = data.email;
-        const password = data.password;
-        console.log(data);
+        const password = data.password
 
-        const imageFile = event?.target?.image?.files[0];
-
-        const formData = new FormData();
-        formData.append("image", imageFile);
         try {
-            // upload image
-            const res = await axios.post(image_hosting_api, formData, {
-                headers: {
-                    "Content-Type": "multipart/form-data",
-                },
-            });
 
-            const photo_url = res?.data.data.display_url;
             createUser(email, password).then((result) => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
-                userProfileUpdate(name, photo_url).then(() => {
-                    const userInfo = {
-                        name: name,
-                        email: email,
-                        photo: photo_url,
-                    };
-                    axiosSecure.post("/users", userInfo).then((res) => {
-                        if (res.data.insertedID) {
-                            console.log("user info saved in database");
-                        }
-                    });
-                    toast.success("Successfully signed up");
-                    reset();
-                    navigate("/");
+
+                const userInfo = {
+                    name: name, email: email, role: 'user'
+                }
+
+                axiosPublic.post("/users", userInfo).then((res) => {
+                    if (res.data.insertedID) {
+                        console.log("user info saved in database");
+                    }
                 });
+                toast.success("Successfully signed up");
+                reset();
+                navigate("/");
             });
+
+            toast.success("Successfully signed up");
+            reset();
+            navigate("/");
         } catch (err) {
             console.log(err.message);
             toast.error(err.message);
         }
+
+
+
+
     };
     // console.log(imgTitle);
     return (
         <div className="hero  sign-back min-h-screen  dark:bg-black ">
             <div className="hero-content flex flex-col md:flex-row-reverse w-full lg:gap-10">
-                <div className="card form-data flex-shrink-0 w-80 md:w-96 lg:w-[450px] py-7 bg-[#ffffff] bg-opacity-10 backdrop-blur-sm shadow-black shadow-2xl">
-                    <div className="text-left ml-10 text-[#213d5e] text-2xl md:text-4xl font-bold">
-                        Create Your Account
+                <div className="card form-data flex-shrink-0 w-96 md:w-[400px] lg:w-[550px] h-[350px] py-7 bg-transparent bg-opacity-10 backdrop-blur-sm shadow-red-900 shadow-2xl my-5 md:my-10 lg:my-14">
+                    <div className="text-center  text-[#ea3939] text-2xl md:text-4xl font-bold">
+                        Sign Up
                     </div>
                     {/* form */}
                     <form onSubmit={handleSubmit(onSubmit)} className="card-body">
-                        <div className="form-control flex flex-row my-3">
-                            <div className="px-3 py-2 rounded-l-lg bg-[#213d5e]  shadow-[#213d5e] shadow-lg">
-                                <IoIosPerson className="text-white " size={24} />
-                            </div>
-
+                        <div className="relative z-0 my-5">
                             <input
                                 {...register("name", { required: true })}
                                 type="text"
-                                placeholder="  Name"
-                                className="input w-full rounded-l-none input-bordered border-[#213d5e] shadow-[#213d5e] shadow-lg"
+                                name="from_name"
+                                className="peer block w-full  appearance-none border-0 border-b border-neutral-400 bg-transparent py-2.5 px-0 text-xl text-white focus:border-red-600 focus:outline-none focus:ring-0"
+                                placeholder=" "
                                 required
                             />
+                            <label className="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-xl text-neutral-400 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-red-600 peer-focus:dark:text-red-500">
+                                Your name
+                            </label>
                         </div>
-                        <div>
-                            {errors.name && (
-                                <span className="text-red-700 font-bold">Name is required</span>
-                            )}
-                        </div>
-
-                        <div className="form-control flex flex-row my-3">
-                            <div className="px-3 py-2 rounded-l-lg bg-[#213d5e]  shadow-[#213d5e] shadow-lg">
-                                <MdOutlineMailLock className="text-white " size={24} />
-                            </div>
+                        <div className="relative z-0 ">
                             <input
                                 {...register("email", { required: true })}
                                 type="email"
-                                placeholder="  example@gmail.com"
-                                className="input w-full rounded-l-none input-bordered border-[#213d5e] shadow-[#213d5e] shadow-lg "
+                                name="from_name"
+                                className="peer block w-full appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-xl text-wh focus:border-red-600 focus:outline-none focus:ring-0"
+
+                                placeholder=" "
                                 required
                             />
-                            {errors.name && (
-                                <span className="text-red-700 font-bold">
-                                    Email is required
-                                </span>
-                            )}
+                            <label className="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-xl text-neutral-400 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-red-600 peer-focus:dark:text-red-500">
+                                Your Email
+                            </label>
                         </div>
-
-                        <div>
-                            <div className="flex flex-col ">
-                                <div className="form-control flex flex-row my-3">
-                                    <div className="px-3 py-2 rounded-l-lg bg-[#213d5e]  shadow-[#213d5e] shadow-lg">
-                                        <GoPasskeyFill className="text-white " size={24} />
-                                    </div>
-
-                                    <div className="flex flex-row items-center w-full">
-                                        <input
-                                            {...register("password", {
-                                                required: true,
-                                                minLength: 8,
-                                                maxLength: 20,
-                                                pattern: /(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])/,
-                                            })}
-                                            type={showPassword ? "text" : "password"}
-                                            name="password"
-                                            placeholder="  password"
-                                            className="input rounded-l-none w-full input-bordered border-[#213d5e] shadow-[#213d5e] shadow-lg"
-                                        />
-                                        {/* Text changes based on visibility */}
-                                        <button
-                                            onClick={togglePasswordVisibility}
-                                            className="relative -ml-7 md:-ml-10 "
-                                        >
-                                            {showPassword ? (
-                                                <FaEyeSlash className="text-[#213d5e]" size={20} />
-                                            ) : (
-                                                <FaEye className="text-[#213d5e]" size={20} />
-                                            )}
-                                        </button>
-                                    </div>
-                                </div>
-
-                                <div className="text-center">
-                                    {errors.name && (
-                                        <span className="text-red-700 font-bold">
-                                            Password is required
-                                        </span>
-                                    )}
-                                    {errors.password?.type === "minLength" && (
-                                        <p className="text-red-600">
-                                            {" "}
-                                            Password must be 8 character
-                                        </p>
-                                    )}
-                                    {errors.password?.type === "maxLength" && (
-                                        <p className="text-red-600">
-                                            {" "}
-                                            Password must be less than 20 character
-                                        </p>
-                                    )}
-                                    {errors.password?.type === "pattern" && (
-                                        <p className="text-red-600">
-                                            {" "}
-                                            Password must have one uppercase , one lowercase and one
-                                            number
-                                        </p>
-                                    )}
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div className="my-2 flex items-center justify-center">
-                                <div className="px-3 py-[11px] rounded-l-lg bg-[#213d5e]  shadow-[#213d5e] shadow-lg -mt-[5px]">
-                                    <GoUpload className="text-2xl text-white" />
-                                </div>
-                                <label
-                                    htmlFor="image"
-                                    className="file-label shadow-[#213d5e] shadow-lg mb-2 text-sm text-white rounded-xl "
+                        <div className="relative z-0 my-5">
+                            <div className="flex flex-row items-center">
+                                <input
+                                    {...register("password", { required: true })}
+                                    type={showPassword ? "text" : "password"}
+                                    name="from_name"
+                                    className="peer block w-full appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-xl text-white focus:border-red-600 focus:outline-none focus:ring-0"
+                                    placeholder=" "
+                                />
+                                <button
+                                    onClick={togglePasswordVisibility}
+                                    className="relative -ml-16 "
                                 >
-                                    <div>
-                                        {imgTitle ? (
-                                            <p>{imgTitle.slice(0, 20)}</p>
-                                        ) : (
-                                            <div className="flex justify-center items-center mx-auto">
-                                                <p>Upload Profile</p>
-                                            </div>
-                                        )}
-                                    </div>
-                                </label>
+                                    {showPassword ? (
+                                        <FaEyeSlash className="text-[#ea3939]" size={20} />
+                                    ) : (
+                                        <FaEye className="text-[#ea3939]" size={20} />
+                                    )}
+                                </button>
                             </div>
-                            <input
-                                className="input w-full rounded-l-none input-bordered border-[#213d5e] shadow-[#213d5e] shadow-lg "
-                                {...register("image", { required: true })}
-                                type="file"
-                                id="image"
-                                name="image"
-                                accept="image/*"
-                                onChange={(e) => setImgTitle(e.target.files[0].name)}
-                            />
+
+
+                            <label className="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-xl text-neutral-400 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-red-600 peer-focus:dark:text-red-500">
+                                Your Password
+                            </label>
                         </div>
-                        {errors.image && (
-                            <span className="text-red-700 font-bold">image is required</span>
-                        )}
-                        <div className="form-control mt-6">
+                        <div className="w-full flex justify-center">
                             <button
-                                type="submit"
-                                className="btn border-0 bg-[#213d5e] shadow-[#243243] shadow-lg hover:bg-[#00ABE4] text-white font-semibold"
+                                type='submit'
+                                className='bg-red-600 w-1/3 rounded-md py-3 text-white'
                             >
-                                Sign Up
+                                {loading ? <TbFidgetSpinner className='animate-spin mx-auto' /> : 'Continue'}
                             </button>
                         </div>
+
+
                     </form>
 
-                    <p className="text-center -mt-4">
-                        <small className="text-neutral-700 ">
+                    <p className="text-center ">
+                        <small className="text-neutral-400 ">
                             Already have an account?{" "}
                             <Link to="/login">
-                                <span className="font-extrabold ">Login</span>
+                                <span className="font-extrabold text-red-700">Login</span>
                             </Link>
                         </small>
                     </p>
-                    <div className="ml-10 social-login">
+                    <div className=" social-login flex justify-center">
                         <SocialLogin />
                     </div>
                     {/* social login  */}
                     <div className="flex justify-center home-btn ">
                         <Link
-                            className="text-sm font-semibold flex flex-row gap-2 items-center"
+                            className="text-lg font-semibold flex flex-row gap-2 items-center"
                             to="/"
                         >
                             <p>Go to</p>
-                            <span className="underline font-extrabold text-base text-[#213d5e]">
+                            <span className="underline font-extrabold text-base text-[#ea3939]">
                                 Home
                             </span>
                         </Link>
                     </div>
-                    <div></div>
+                    <div>
+
+                    </div>
                 </div>
             </div>
         </div>

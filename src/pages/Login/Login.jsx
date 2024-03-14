@@ -1,99 +1,121 @@
-import { Link, useLocation, useNavigate, } from "react-router-dom";
-import { useContext, useState } from "react";
-import { AuthContext } from "../../AuthProvider/AuthProvider";
-import { FcGoogle } from 'react-icons/fc'
-import Swal from 'sweetalert2'
+/* eslint-disable react/no-unescaped-entities */
+import './login.css'
+import { useForm } from "react-hook-form";
+import useAuth from "../../hooks/useAuth";
+import { Link, useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
+import axios from "axios";
+import { useState } from "react";
+import SocialLogin from '../../components/SocialLogin/SocialLogin';
 const Login = () => {
-
-    const { signIn, googleLogin } = useContext(AuthContext)
-    const [confirmMessage, setConfirmMessage] = useState("")
-    const [error, setError] = useState("")
-
-    const location = useLocation();
+    const { userLogin } = useAuth();
     const navigate = useNavigate();
+    const {
+        register,
+        handleSubmit,
+        reset,
+        formState: { errors },
+    } = useForm();
 
-    const handleLogin = e => {
-        e.preventDefault();
-        const form = new FormData(e.currentTarget);
-        const email = form.get('email');
-        const password = form.get('password');
-        if (!/[A-Z].{8,}$/.test(password)) {
-            setError('Your password should have contain at least 8 character contained Capital letter ')
-            return
-        }
-        setConfirmMessage("")
-        setError("")
-        signIn(email, password)
-            .then(result => {
-                result.user
+    // password toggle function
 
+    const [showPassword, setShowPassword] = useState(false)
 
-                Swal.fire({
-                    position: 'top-end',
-                    icon: 'success',
-                    title: 'Successfully login',
-                    showConfirmButton: false,
-                    timer: 1500
-                })
+    const togglePasswordVisibility = () => {
+        setShowPassword((prevShowPassword) => !prevShowPassword);
+    };
 
-                navigate(location?.state ? location.state : '/')
+    // handle OnSubmit
+    const onSubmit = (data) => {
+        const email = data.email;
+        const password = data.password;
+        console.log(email, password);
 
-                setConfirmMessage("Email successfully logged in")
+        userLogin(email, password)
+            .then(() => {
+                toast.success("User Login Successfully");
+
+                axios.patch(`/monthly-user-count/${email}`).then((res) => res.data);
+                reset();
+                navigate("/");
             })
-            .catch(error => {
-                setError(error.message)
-            })
-    }
-
+            .catch((err) => {
+                console.log(err.message);
+                toast.error(err.message);
+            });
+    };
 
     return (
-        <div>
-            <div className="hero-content flex-col  w-full mx-auto">
-                {
-                    error && < p className="text-red-600 font-bold">{error}</p>
-                }
-                {
-                    confirmMessage && < p className="text-green-600 font-bold">{confirmMessage}</p>
-                }
-                <div className="text-center lg:text-left">
-                    <h1 className="text-5xl text-red-600 font-bold">Login now!</h1>
-                </div>
-                <div className="card  w-full max-w-sm">
-                    <form onSubmit={handleLogin} className="card-body">
-                        <div className="form-control">
-                            <label className="label">
-                                <span className="label-text text-red-600 font-bold">Email :</span>
-                            </label>
-                            <input type="email"
-                                name="email"
-                                placeholder="email" className="input input-bordered text-black" required />
-                        </div>
-                        <div className="form-control">
-                            <label className="label">
-                                <span className="label-text text-red-600 font-bold">Password</span>
-                            </label>
-                            <input type="password"
-                                name="password"
-                                placeholder="password" className="input input-bordered text-black" required />
-                            <label className="label">
-                                <a href="#" className="label-text-alt  text-red-600  link link-hover">Forgot password?</a>
+        <div className="hero sign-back min-h-screen  dark:bg-black">
+            <div className=" px-5 flex flex-col items-center justify-center md:flex-row-reverse w-full lg:gap-10">
+                <div className="card flex-shrink-0 w-80 md:w-96 lg:w-[450px] py-7 bg-transparent bg-opacity-10 backdrop-blur-sm shadow-red-900 shadow-2xl">
+                    <div className="login-text text-center my-2 md:my-5 lg:my-8 text-[#ea3939] text-2xl md:text-4xl font-bold">
+                        Login to your account
+                    </div>
+                    {/* form */}
+                    <form onSubmit={handleSubmit(onSubmit)} className="card-body">
+                        
+                        <div className="relative z-0 ">
+                            <input
+                                {...register("email", { required: true })}
+                                type="email"
+                                name="from_name"
+                                className="peer block w-full appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-xl text-wh focus:border-red-600 focus:outline-none focus:ring-0"
+
+                                placeholder=" "
+                                required
+                            />
+                            <label className="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-xl text-neutral-400 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-red-600 peer-focus:dark:text-red-500">
+                                Your Email
                             </label>
                         </div>
-                        <div className="form-control mt-6 ">
-                            <button className=" bg-red-600 text-white hover:bg-white  hover:text-red-600 w-36 h-10 rounded-lg">Login</button>
+                        <div className="relative z-0 my-5">
+                            <input
+                                {...register("password", { required: true })}
+                                type="email"
+                                name="from_name"
+                                className="peer block w-full appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-xl text-white focus:border-red-600 focus:outline-none focus:ring-0"
+                                placeholder=" "
+                                required
+                            />
+                            <label className="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-xl text-neutral-400 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-red-600 peer-focus:dark:text-red-500">
+                                Your Password
+                            </label>
                         </div>
+
                     </form>
-                    <p className="mb-4 text-center">Do not have an account ? Please <Link className="font-bold text-red-600 underline" to="/register">Register</Link> </p>
-                </div>
-                <div className="gap-2">
-                    <button onClick={googleLogin} className="btn border border-red-600 text-red-600 my-4 btn-outline w-full">
-                        <FcGoogle></FcGoogle>
-                        Google
-                    </button>
+
+
+                    <p className="md:text-center account-comment my-4">
+                        <small className="text-neutral-400">
+                            Don't Have an account?{" "}
+                            <Link to="/signUp">
+                                <span className="font-extrabold text-red-600">
+                                    {" "}
+                                    Sign Up
+                                </span>
+                            </Link>
+                        </small>
+                    </p>
+                    {/* social login  */}
+                    <div className="flex justify-center social-login">
+                        <SocialLogin />
+                    </div>
+                    <div className="flex justify-center home-btn ">
+                        <Link
+                            className="text-xl font-semibold flex flex-row gap-2 items-center"
+                            to="/"
+                        >
+                            <p>Go to</p>
+                            <span className="underline font-extrabold text-base text-[#213d5e]">Home</span>
+                        </Link>
+                    </div>
+
                 </div>
             </div>
+            <div>
+            </div>
         </div>
-
     );
 };
 
