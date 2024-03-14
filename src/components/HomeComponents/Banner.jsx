@@ -67,7 +67,7 @@ const Banner = () => {
                                 <div className="hero-overlay bg-black opacity-60"></div>
                                 <div className="hero-content text-left text-neutral-content">
                                     <div className="">
-                                        <h1 className="mb-5 text-2xl md:text-4xl lg:text-5xl font-bold">
+                                        <h1 className="mb-5 xl:text-6xl text-2xl md:text-4xl lg:text-5xl font-bold">
                                             AUTOMOTIVE
                                             <span className="text-red-600">
                                                 CARE
@@ -99,7 +99,7 @@ const Banner = () => {
                                 <div className="hero-overlay bg-black opacity-60"></div>
                                 <div className="hero-content text-left text-neutral-content">
                                     <div className="">
-                                        <h1 className="mb-5 text-2xl md:text-4xl lg:text-5xl font-bold">
+                                        <h1 className="mb-5 xl:text-6xl text-2xl md:text-4xl lg:text-5xl font-bold">
                                             AUTOMOTIVE
                                             <span className="text-red-600">
                                                 CARE
@@ -131,7 +131,7 @@ const Banner = () => {
                                 <div className="hero-overlay bg-black opacity-60"></div>
                                 <div className="hero-content text-left text-neutral-content">
                                     <div className="">
-                                        <h1 className="mb-5 text-2xl md:text-4xl lg:text-5xl font-bold">
+                                        <h1 className="mb-5 xl:text-6xl text-2xl md:text-4xl lg:text-5xl font-bold">
                                             AUTOMOTIVE
                                             <span className="text-red-600">
                                                 CARE

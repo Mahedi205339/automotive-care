@@ -1,14 +1,23 @@
+import Loading from "../../components/Loading/Loading";
 import FeaturedCarousel from "../../components/featuredCars/FeaturedCarousel";
 import useCars from "../../hooks/useCars";
 import { useState } from "react";
 
 const Cars = () => {
-    const [cars] = useCars()
+    const [cars, isLoading] = useCars()
+    console.log(typeof isLoading);
+    console.log(isLoading);
     const [search, setSearch] = useState("")
     console.log(search);
     const allCars = []
     const [brands, setBrands] = useState("")
     // console.log(brands);
+
+    if (isLoading) {
+       return <Loading/>
+    }
+
+
     const showCars = cars.filter((item) => item?.brand === brands)
     // console.log(showCars);
     if (showCars.length === 0) {
