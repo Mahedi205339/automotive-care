@@ -6,6 +6,7 @@ import Layout from "../Layout/Layout";
 import Cars from "../pages/Cars/Cars";
 import AddCars from "../pages/AddCars/AddCars";
 import SignUp from "../pages/SignUp/SignUp";
+import DashboardLayout from "../Layout/DashboardLayout";
 // import PrivateRoute from "./PrivateRoute";
 
 
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
                 path: '/signUp',
                 element: <SignUp />
             },
+            {
+                path: '/dashboard',
+                element: <DashboardLayout />
+            }
 
         ],
         errorElement: <ErrorPage></ErrorPage>

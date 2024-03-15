@@ -56,6 +56,15 @@ const Navbar = () => {
             Add Car
         </NavLink>
         </li>
+        <li> <NavLink
+            to="/dashboard"
+            className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "bg-red-600" : ""
+            }
+        >
+            Dashboard
+        </NavLink>
+        </li>
         <li>
             {
 
@@ -76,7 +85,7 @@ const Navbar = () => {
 
     return (
         <div className="mb-4 w-full fixed z-20 backdrop-blur-sm bg-neutral-800 bg-opacity-10 ">
-            <nav className="nav my-2 md:my-3 lg:my-5 max-w-[1500px] mx-auto px-5 lg:px-8 md:px-7">
+            <nav className="nav  max-w-[1500px] mx-auto px-5 lg:px-8 md:px-7">
                 <div>
                     logo
                 </div>
