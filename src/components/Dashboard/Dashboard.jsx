@@ -1,8 +1,9 @@
 
 const Dashboard = () => {
     return (
-        <div>
-            fghaegha
+        <div className='bg-black'>
+            
+           <h3>heohsdjoh aoihrg</h3>
         </div>
     );
 };
