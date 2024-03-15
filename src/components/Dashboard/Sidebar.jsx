@@ -28,19 +28,15 @@ const Sidebar = ({ setIsSideOpen }) => {
         <>
             <section className="flex gap-6 fixed left-0">
                 <div
-                    className={`bg-[#000000] text-white min-h-screen ${open ? "w-[300px] px-4" : "w-16 px-3"
+                    className={`bg-[#000000] text-red-600 min-h-screen ${open ? "w-[300px] px-4" : "w-16 px-3"
                         } duration-700 text-red-600 -z-10`}
                 >
                     <div
                         className={`py-6 flex ${open ? "justify-between" : "justify-center"
                             }`}
                     >
-                        <Link className="h-[40px] flex items-start" to="/">
-                            <img
-                                className={`w-[60px] md:w-[130px] ${!open && "hidden"}`}
-                                src=""
-                                alt=""
-                            />
+                        <Link className="h-[40px] text-xl text-red-700 font-bold font- flex items-start" to="/">
+                    
                         </Link>
                         <HiMenuAlt3
                             size={26}
@@ -48,12 +44,12 @@ const Sidebar = ({ setIsSideOpen }) => {
                             className="cursor-pointer"
                         ></HiMenuAlt3>
                     </div>
-                    <div className="mt-0 md:mt-4 -ml-3 md:ml-0 flex flex-col gap-4 relative">
+                    <div className="mt-0 md:mt-4 -ml-3 md:ml-0 flex  flex-col gap-4 relative">
                         {isAdmin &&
                             adminMenus?.map((menu, i) => (
                                 <Link
                                     className={`${menu?.margin ? "mt-5" : menu?.marginBot ? "mb-5" : ""
-                                        } group flex items-center text-sm gap-3.5 font-medium p-2 hover:bg-blue-300 dark:hover:bg-blue-600 rounded-md`}
+                                        } group flex items-center text-sm gap-3.5 font-medium p-2 hover:bg-red-600 dark:hover:bg-red-600 rounded-md`}
                                     to={menu?.link}
                                     key={i}
                                 >
@@ -61,8 +57,8 @@ const Sidebar = ({ setIsSideOpen }) => {
                                     <h2
                                         style={{
                                             transitionDelay: `${i + 3}00ms`,
-                                        }}
-                                        className={`whitespace-pre duration-500 ${!open && "opacity-0 translate-x-28 overflow-hidden"
+                                        } }
+                                        className={`whitespace-pre text-xl duration-500 ${!open && "opacity-0 translate-x-28 overflow-hidden"
                                             }`}
                                     >
                                         {menu?.name}

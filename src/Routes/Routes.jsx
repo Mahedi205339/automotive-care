@@ -8,6 +8,7 @@ import SignUp from "../pages/SignUp/SignUp";
 import AddCars from "../pages/AddCars/AddCars";
 import DashboardLayout from "../Layout/DashboardLayout";
 import Dashboard from "../components/Dashboard/Dashboard";
+import CarDetails from "../components/CarDetails/CarDetails";
 // import PrivateRoute from "./PrivateRoute";
 
 
@@ -35,6 +36,11 @@ const router = createBrowserRouter([
                 path: '/signUp',
                 element: <SignUp />
             },
+            {
+                path: '/cars/:id',
+                element: <CarDetails />,
+                loader: ({ params }) => fetch(`http://localhost:5000/cars/${params.id}`)
+            }
 
         ],
         errorElement: <ErrorPage></ErrorPage>
@@ -45,7 +51,7 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '/dashboard',
-                element: <Dashboard/>
+                element: <Dashboard />
             },
 
             {
