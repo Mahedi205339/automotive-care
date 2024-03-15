@@ -12,6 +12,7 @@ const Home = () => {
 
     return (
         <div>
+
             <Banner></Banner>
             <Info></Info>
             <FeaturedCars />
@@ -19,6 +20,8 @@ const Home = () => {
             <BlogPost></BlogPost>
             <ContactUs></ContactUs>
             <Comments></Comments>
+
+
         </div>
     );
 };

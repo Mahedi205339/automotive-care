@@ -9,6 +9,7 @@ import SocialLogin from '../../components/SocialLogin/SocialLogin';
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 import { TbFidgetSpinner } from 'react-icons/tb'
+import Tilt from 'react-parallax-tilt';
 const Login = () => {
     const { login , loading } = useAuth();
     const navigate = useNavigate();
@@ -48,9 +49,10 @@ const Login = () => {
     return (
         <div className="hero sign-back min-h-screen  dark:bg-black">
             <div className=" px-5 flex flex-col items-center justify-center md:flex-row-reverse w-full lg:gap-10">
+                <Tilt>
                 <div className="card flex-shrink-0 w-80 md:w-96 lg:w-[450px] py-7 bg-transparent bg-opacity-10 backdrop-blur-sm shadow-red-900 shadow-2xl">
-                    <div className="login-text text-center my-2 md:my-5 lg:my-8 text-[#ea3939] text-2xl md:text-4xl font-bold">
-                        Login to your account
+                    <div className="login-text text-center my-2 md:my-5 lg:my-8 text-[#ea3939] text-2xl md:text-4xl lg:text-5xl font-bold">
+                        Login your account
                     </div>
                     {/* form */}
                     <form onSubmit={handleSubmit(onSubmit)} className="card-body">
@@ -154,16 +156,19 @@ const Login = () => {
                         <SocialLogin />
                     </div>
                     <div className="flex justify-center home-btn ">
-                        <Link
-                            className="text-xl font-semibold flex flex-row gap-2 items-center"
-                            to="/"
-                        >
-                            <p>Go to</p>
-                            <span className="underline font-extrabold text-base text-[#213d5e]">Home</span>
-                        </Link>
+                    <Link
+                                className="text-lg md:text-xl font-semibold flex flex-row gap-2 items-center"
+                                to="/"
+                            >
+                                <p>Go to</p>
+                                <span className="underline text-xl font-extrabold  text-[#ea3939]">
+                                    Home
+                                </span>
+                            </Link>
                     </div>
 
                 </div>
+                </Tilt>
             </div>
             <div>
             </div>
