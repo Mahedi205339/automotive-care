@@ -11,7 +11,6 @@ export const AuthContext = createContext(null)
 
 
 const AuthProvider = ({ children }) => {
-
     const [loading, setLoading] = useState(true)
 
     const [user, setUser] = useState(null)
@@ -68,7 +67,7 @@ const AuthProvider = ({ children }) => {
         login,
         loading,
         googleLogin,
-        updateUserProfile
+        updateUserProfile,
 
     }
 

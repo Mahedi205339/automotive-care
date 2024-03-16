@@ -1,10 +1,83 @@
 import { useLoaderData } from "react-router-dom";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 // requires a loader
+import Swal from "sweetalert2";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Carousel } from 'react-responsive-carousel';
+import useAuth from "../../hooks/useAuth";
+import useAxiosPublic from "../../hooks/useAxoisPublic";
 const CarDetails = () => {
     const carData = useLoaderData()
-    console.log(carData);
+    const navigate = useNavigate()
+    const location = useLocation()
+    // console.log(carData);
+    const { user } = useAuth()
+    const axiosPublic = useAxiosPublic()
+    const { title, image, brand, price, _id } = carData
+    const handleBookings = () => {
+        if (user && user.email) {
+            //send cart item to the database
+            const cartItem = {
+                car_id: _id,
+                email: user.email,
+                title,
+                image,
+                price,
+                brand
+            }
+            axiosPublic.post('/bookings', cartItem)
+                .then(res => {
+                    console.log(res.data)
+                    if (res.data.insertedId) {
+                        Swal.fire({
+                            position: "center",
+                            icon: "success",
+                            title: `${title} successfully added on bookings`,
+                            showConfirmButton: false,
+                            background: "rgba(0, 0, 0, 0.5)",
+                            backdrop: "blur(100px)",
+                            color: "white",
+                            timer: 2000
+                        });
+                        //refetch cart 
+                    }else{
+                        Swal.fire({
+                            position: "center",
+                            icon: "error",
+                            title: `${title} Already booked`,
+                            showConfirmButton: false,
+                            background: "rgba(0, 0, 0, 0.5)",
+                            backdrop: "blur(100px)",
+                            color: "white",
+                            timer: 2000
+                        });
+                    }
+                })
+
+        } else {
+            Swal.fire({
+                title: "You are not logged in",
+                text: "Please login for any bookings",
+                icon: "warning",
+                showCancelButton: true,
+                color: "white",
+                confirmButtonColor: "#52793e",
+                cancelButtonColor: "#d63030",
+                confirmButtonText: "Login",
+                background: "rgba(0, 0, 0, 0.5)",
+                backdrop: "blur(100px)",
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    navigate('/login', { state: { from: location } })
+                }
+            });
+
+
+        }
+
+
+    }
+
     return (
         <div className="max-w-[1560px] mx-auto pt-[100px] min-h-screen flex flex-col md:flex-col lg:flex-row justify-between items-baseline">
             <div className="p-28  w-full flex-1">
@@ -32,7 +105,7 @@ const CarDetails = () => {
                 <div>
                     <div className=" my-2 md:my-6 ">
                         <h4 className="text-2xl md:text-3xl lg:text-4xl text-red-600 font-bold">About Car:</h4>
-                        <p className="text-neutral-400  my-2 md:my-6 lg:my-10">
+                        <p className="text-neutral-400 text-lg  xl:text-2xl my-2 md:my-6 lg:my-10">
                             {carData?.description}
                         </p>
                     </div>
@@ -44,7 +117,7 @@ const CarDetails = () => {
                     </div>
                 </div>
                 <div>
-                    <button className="rounded-lg bg-transparent border-red-500 text-xl border-2 text-red-600 hover:shadow-xl font-bold hover:text-white hover:bg-red-600 hover:shadow-red-600 py-1 px-4 md:py-4 md:px-8 my-2 md:my-5">
+                    <button onClick={() => handleBookings(carData)} className="rounded-lg bg-transparent border-red-500 text-xl border-2 text-red-600 hover:shadow-xl font-bold hover:text-white hover:bg-red-600 hover:shadow-red-600 py-1 px-4 md:py-4 md:px-8 my-2 md:my-5">
                         Book Now
                     </button>
                 </div>
