@@ -16,6 +16,7 @@ const Sidebar = ({ setIsSideOpen }) => {
 
 
     const adminMenus = [
+        { name: "Home", link: "/", icon: AiOutlineBarChart },
         { name: "Dashboard", link: "/dashboard", icon: AiOutlineBarChart },
         { name: "Add Car", link: "/dashboard/add-cars", icon: AiOutlineUser },
         { name: "Inbox", link: "inbox", icon: FaEnvelope },

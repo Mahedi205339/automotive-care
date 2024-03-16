@@ -111,7 +111,7 @@ const CarDetails = () => {
                     </div>
 
                     <div className="flex flex-col md:flex-row justify-start gap-6">
-                        <h4 className="text-neutral-400">  Price : <span className="text-red-600 font-bold"> {carData?.price}</span></h4>
+                        <h4 className="text-neutral-400">  Price : <span className="text-red-600 font-bold"> $ {carData?.price}</span></h4>
                         <h4 className="text-neutral-400">  Mileage : <span className="text-red-600 font-bold"> {carData?.mileage}</span></h4>
                         <h4 className="text-neutral-400">  Engine Type: <span className="text-red-600 font-bold"> {carData?.engine_type}</span></h4>
                     </div>

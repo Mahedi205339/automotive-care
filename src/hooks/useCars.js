@@ -3,24 +3,28 @@ import { useQuery } from "@tanstack/react-query";
 import useAxiosPublic from "./useAxoisPublic";
 
 
-const useCars = () => {
+
+const useCars = (asc) => {
 
     const axiosPublic = useAxiosPublic();
 
+    console.log(asc);
 
-    const { data: cars = [], error, refetch, isLoading } = useQuery({
+
+    const { data: cars = [], isLoading, refetch } = useQuery({
         queryKey: ['cars'],
 
         queryFn: async () => {
 
-            const res = await axiosPublic.get('/cars')
+            const res = await axiosPublic.get(`/cars?sort=${asc}`)
             return res.data;
         }
 
     })
-    console.log((isLoading));
 
-    return [cars, isLoading, error , refetch]
+
+
+    return [cars, isLoading, refetch]
 }
 
 export default useCars;
