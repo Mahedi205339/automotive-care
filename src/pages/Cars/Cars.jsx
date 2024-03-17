@@ -8,22 +8,46 @@ const Cars = () => {
     const [asc, setAsc] = useState("asc")
     const [cars, setCars] = useState([])
     const [isLoading, setIsLoading] = useState(true)
-
     const axiosPublic = useAxiosPublic();
     const [search, setSearch] = useState("")
     const allCars = []
     const [brands, setBrands] = useState("")
+    const [currentPage, setCurrentPage] = useState(0)
+    const carPerPage = 12;
+    // pagination 
+    const numberOfPages = Math.ceil(cars.length / carPerPage)
+
+
+    // type 1 
+    // for (let i = 0; i < numberOfPages; i++) {
+    //     pages.push(i)
+    // }
+    // type 2 (shortcut)
+    const pages = [...Array(numberOfPages).keys()];
+    // console.log(pages)
+    const handlePervPage = () => {
+        if (currentPage > 0) {
+            setCurrentPage(currentPage - 1)
+        }
+
+    }
+    const handleNextPage = () => {
+        if (currentPage < pages.length - 1)
+            setCurrentPage(currentPage + 1)
+    }
+
+
 
     useEffect(() => {
         setIsLoading(true);
-        axiosPublic.get(`/cars?sort=${asc}`)
+        axiosPublic.get(`/cars?sort=${asc}&page=${currentPage}&size=${carPerPage}`)
             .then(res => {
                 setCars(res.data)
                 setIsLoading(false)
             })
 
-    }, [asc, axiosPublic])
-    console.log((isLoading));
+    }, [asc, axiosPublic, currentPage, carPerPage])
+    // console.log((isLoading));
 
 
     const showCars = cars.filter((item) => item?.brand === brands)
@@ -33,9 +57,11 @@ const Cars = () => {
         allCars.push(...allCarData)
 
     }
+
     if (isLoading) {
         <Loading />
     }
+
 
 
     // console.log(allCars);
@@ -105,7 +131,16 @@ const Cars = () => {
 
                 </div>
             </div>
-
+            <div>
+                <p>currentPage = {currentPage}</p>
+                <button onClick={handlePervPage} className="px-2 py-1">Prev</button>
+                {
+                    pages.map(page => <button
+                        onClick={() => setCurrentPage(page)}
+                        key={page} className={`${currentPage === page ? 'bg-red-600' : 'bg-black'} border border-red-600 px-3 py-1`}> {page}</button>)
+                }
+                <button onClick={handleNextPage} className="px-2 py-1">Next</button>
+            </div>
         </div >
     );
 };
