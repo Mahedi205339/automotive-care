@@ -19,7 +19,7 @@ const featuredCarousel = ({ item }) => {
                     </p>
                     <Link className='bg-transparent' to={`/cars/${item._id}`}>
 
-                        <button className='rounded-lg bg-transparent border-red-500 text-xl border-2 text-red-600 hover:shadow-md font-bold hover:text-white hover:bg-red-600 hover:shadow-red-600 py-1 px-4 md:py-4 md:px-8 my-2'>
+                        <button className='rounded-lg bg-transparent border-red-500   border-2 text-red-600 hover:shadow-xl font-semibold hover:text-white hover:bg-red-600 hover:shadow-red-600 py-1 px-2 md:py-2 md:px-3 my-2 md:my-5'>
                             Details
                         </button>
                     </Link>

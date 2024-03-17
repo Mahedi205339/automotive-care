@@ -87,7 +87,7 @@ const Navbar = () => {
         <div className="mb-4 w-full fixed z-20 backdrop-blur-sm bg-neutral-800 bg-opacity-10 ">
             <nav className="nav  max-w-[1500px] mx-auto px-5 lg:px-8 md:px-7">
                 <div>
-                    logo
+                    <h3 className="text-red-600 font-Corinthia font-bold text-xl md:text-3xl">AutomotiveCare</h3>
                 </div>
                 <ul className={active}>
                     {navLink}

@@ -51,7 +51,7 @@ const Login = () => {
             <div className=" px-5 flex flex-col items-center justify-center md:flex-row-reverse w-full lg:gap-10">
                 <Tilt>
                 <div className="card flex-shrink-0 w-80 md:w-96 lg:w-[450px] py-7 bg-transparent bg-opacity-10 backdrop-blur-sm shadow-red-900 shadow-2xl">
-                    <div className="login-text text-center my-2 md:my-5 lg:my-8 text-[#ea3939] text-2xl md:text-4xl lg:text-5xl font-bold">
+                    <div className="login-text text-center my-2 md:my-5 lg:my-8 text-[#ea3939] text-xl md:text-2xl lg:text-4xl font-bold">
                         Login your account
                     </div>
                     {/* form */}
@@ -67,7 +67,7 @@ const Login = () => {
                                 placeholder=" "
                                 required
                             />
-                            <label className="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-xl text-neutral-400 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-red-600 peer-focus:dark:text-red-500">
+                            <label className="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform  text-neutral-400 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-red-600 peer-focus:dark:text-red-500">
                                 Your Email
                             </label>
                         </div>
@@ -82,7 +82,7 @@ const Login = () => {
                                     })}
                                     type={showPassword ? "text" : "password"}
                                     name="password"
-                                    className="peer block w-full appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-xl text-white focus:border-red-600 focus:outline-none focus:ring-0"
+                                    className="peer block w-full appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-white focus:border-red-600 focus:outline-none focus:ring-0"
                                     placeholder=" "
                                 />
                                 <button
@@ -95,7 +95,7 @@ const Login = () => {
                                         <FaEye className="text-[#ea3939]" size={20} />
                                     )}
                                 </button>
-                                <label className="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-xl text-neutral-400 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-red-600 peer-focus:dark:text-red-500">
+                                <label className="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform  text-neutral-400 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-red-600 peer-focus:dark:text-red-500">
                                     Your Password
                                 </label>
                             </div>
@@ -157,11 +157,11 @@ const Login = () => {
                     </div>
                     <div className="flex justify-center home-btn ">
                     <Link
-                                className="text-lg md:text-xl font-semibold flex flex-row gap-2 items-center"
+                                className="text-lg md:text-lg font-semibold flex flex-row gap-2 items-center"
                                 to="/"
                             >
                                 <p>Go to</p>
-                                <span className="underline text-xl font-extrabold  text-[#ea3939]">
+                                <span className="underline text-lg font-extrabold  text-[#ea3939]">
                                     Home
                                 </span>
                             </Link>

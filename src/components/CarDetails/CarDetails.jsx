@@ -98,14 +98,14 @@ const CarDetails = () => {
             </div>
             <div className="flex-1 px-5">
                 <div className="mb-2 md:mb-6 lg:mb-10 xl:mb-14">
-                    <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl"> Model: <span className="text-red-600 font-semibold">{carData?.title}</span></h1>
-                    <h1 className="text-2xl md:text-2xl lg:text-3xl xl:text-4xl my-3 md:my-6 lg:my-10 ">Brand: <span className="text-red-600 font-semibold">{carData?.brand}</span></h1>
+                    <h1 className="text-2xl md:text-3xl lg:text-4xl "> Model: <span className="text-red-600 font-semibold">{carData?.title}</span></h1>
+                    <h1 className="text-2xl md:text-2xl lg:text-3xl  my-2 md:my-5 lg:my-7 ">Brand: <span className="text-red-600 font-semibold">{carData?.brand}</span></h1>
                 </div>
 
                 <div>
-                    <div className=" my-2 md:my-6 ">
-                        <h4 className="text-2xl md:text-3xl lg:text-4xl text-red-600 font-bold">About Car:</h4>
-                        <p className="text-neutral-400 text-lg  xl:text-2xl my-2 md:my-6 lg:my-10">
+                    <div className=" my-0 md:my-4 ">
+                        <h4 className="text-xl md:text-2xl lg:text-3xl text-red-600 font-bold">About Car:</h4>
+                        <p className="text-neutral-400 text-sm  lg:text-base my-2 md:my-5 lg:my-70">
                             {carData?.description}
                         </p>
                     </div>
@@ -117,7 +117,7 @@ const CarDetails = () => {
                     </div>
                 </div>
                 <div>
-                    <button onClick={() => handleBookings(carData)} className="rounded-lg bg-transparent border-red-500 text-xl border-2 text-red-600 hover:shadow-xl font-bold hover:text-white hover:bg-red-600 hover:shadow-red-600 py-1 px-4 md:py-4 md:px-8 my-2 md:my-5">
+                    <button onClick={() => handleBookings(carData)} className="rounded-lg bg-transparent border-red-500   border-2 text-red-600 hover:shadow-xl font-semibold hover:text-white hover:bg-red-600 hover:shadow-red-600 py-1 px-2 md:py-2 md:px-3 my-2 md:my-5">
                         Book Now
                     </button>
                 </div>

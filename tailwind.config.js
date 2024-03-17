@@ -5,7 +5,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        "Corinthia": [ "Corinthia", 'cursive'],
+      },
+    },
   },
   plugins: [require("daisyui"), require('@tailwindcss/forms')],
 }
