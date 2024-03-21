@@ -26,6 +26,12 @@ const featuredCarousel = ({ item }) => {
 
 
                 </div>
+
+                <button className='bg-red-600 px-2 py-1 absolute z-20 top-0'>
+                   $ {item.price}
+                </button>
+
+
             </div>
         </div>
     );

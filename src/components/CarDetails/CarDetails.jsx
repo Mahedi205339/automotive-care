@@ -44,7 +44,7 @@ const CarDetails = () => {
                         Swal.fire({
                             position: "center",
                             icon: "error",
-                            title: `${title} Already booked`,
+                            title:  `Already booked a car`,
                             showConfirmButton: false,
                             background: "rgba(0, 0, 0, 0.5)",
                             backdrop: "blur(100px)",

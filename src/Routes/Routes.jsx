@@ -9,6 +9,7 @@ import AddCars from "../pages/AddCars/AddCars";
 import DashboardLayout from "../Layout/DashboardLayout";
 import Dashboard from "../components/Dashboard/Dashboard";
 import CarDetails from "../components/CarDetails/CarDetails";
+import MyBookings from "../pages/MyBookings/MyBookings";
 // import PrivateRoute from "./PrivateRoute";
 
 
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
             {
                 path: '/cars',
                 element: <Cars />
+            },
+            {
+                path: '/my-bookings',
+                element: <MyBookings/>
             },
 
             {

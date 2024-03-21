@@ -2,20 +2,35 @@ import Loading from "../../components/Loading/Loading";
 import FeaturedCarousel from "../../components/featuredCars/FeaturedCarousel";
 import useAxiosPublic from "../../hooks/useAxoisPublic";
 import { useEffect, useState } from "react";
-
+import { BsArrowRightCircleFill } from "react-icons/bs";
+import { BsArrowLeftCircleFill } from "react-icons/bs";
 const Cars = () => {
 
     const [asc, setAsc] = useState("asc")
     const [cars, setCars] = useState([])
+    const [count, setCount] = useState([])
     const [isLoading, setIsLoading] = useState(true)
     const axiosPublic = useAxiosPublic();
     const [search, setSearch] = useState("")
     const allCars = []
     const [brands, setBrands] = useState("")
     const [currentPage, setCurrentPage] = useState(0)
-    const carPerPage = 12;
+    const carPerPage = 9;
     // pagination 
-    const numberOfPages = Math.ceil(cars.length / carPerPage)
+
+
+    useEffect(() => {
+        setIsLoading(true);
+        axiosPublic.get("/cars-count")
+            .then(res => {
+                setCount(res.data)
+                setIsLoading(false)
+            })
+
+    }, [axiosPublic])
+
+    const countCar = count.filter(car => car.category === 'cars').length
+    const numberOfPages = Math.ceil(countCar / carPerPage)
 
 
     // type 1 
@@ -38,6 +53,8 @@ const Cars = () => {
 
 
 
+    // console.log(countCar);
+
     useEffect(() => {
         setIsLoading(true);
         axiosPublic.get(`/cars?sort=${asc}&page=${currentPage}&size=${carPerPage}`)
@@ -46,8 +63,12 @@ const Cars = () => {
                 setIsLoading(false)
             })
 
+
     }, [asc, axiosPublic, currentPage, carPerPage])
+
+
     // console.log((isLoading));
+
 
 
     const showCars = cars.filter((item) => item?.brand === brands)
@@ -75,7 +96,7 @@ const Cars = () => {
                 <div className="flex justify-center my-3 md:my-5">
                     {
                         showCars.length === 0 ?
-                            <h2 className="text-xl md:text-3xl lg:text-4xl text-red-600 font-semibold">Total find cars {allCars.length}</h2> :
+                            <h2 className="text-lg md:text-xl lg:text-2xl text-red-600 font-semibold">Total find cars {allCars.length}</h2> :
                             <h2 className="text-xl md:text-3xl lg:text-4xl text-red-600 font-semibold">Total find cars {showCars.length}</h2>
                     }
                 </div>
@@ -89,7 +110,7 @@ const Cars = () => {
 
 
 
-                            <select onChange={(e) => setBrands(e?.target?.value)} className="select select-error text-base w-96 h-5 bg-neutral-900">
+                            <select onChange={(e) => setBrands(e?.target?.value)} className="select select-error text-base sm:w-80  w-80 md:w-96  bg-neutral-900">
                                 <option disabled selected>Brands</option>
                                 <option value="">All Cars</option>
                                 <option value="BMW">BMW</option>
@@ -104,7 +125,7 @@ const Cars = () => {
 
                         </div>
                         <div>
-                            <select onChange={(e) => setAsc(e.target.value)} className="select select-error text-base w-96 h-8 bg-neutral-900">
+                            <select onChange={(e) => setAsc(e.target.value)} className="select select-error text-base w-80 md:w-96  bg-neutral-900">
                                 <option disabled selected>Sort Price</option>
                                 <option value="asc">Low to High</option>
                                 <option value="desc">High to Low</option>
@@ -113,7 +134,7 @@ const Cars = () => {
                         </div>
                         <div>
 
-                            <input onChange={(e) => setSearch(e.target.value)} type="text" placeholder="Search by Car name" className="input input-bordered text-base w-96 h-10 border border-red-700 bg-neutral-900" />
+                            <input onChange={(e) => setSearch(e.target.value)} type="text" placeholder="Search by Car name" className="input input-bordered sm:w-80 text-base w-72 md:w-96 h-10 border border-red-700 bg-neutral-900" />
                         </div>
 
                     </div>
@@ -131,15 +152,20 @@ const Cars = () => {
 
                 </div>
             </div>
-            <div>
-                <p>currentPage = {currentPage}</p>
-                <button onClick={handlePervPage} className="px-2 py-1">Prev</button>
+            <div className="flex justify-center my-6 md:my-10 lg:my-14">
+                <button onClick={handlePervPage} className="">
+                    <BsArrowLeftCircleFill className="text-black border border-red-600 hover:text-red-600 bg-white rounded-full" size={30}/>
+                    
+                    </button>
                 {
                     pages.map(page => <button
                         onClick={() => setCurrentPage(page)}
-                        key={page} className={`${currentPage === page ? 'bg-red-600' : 'bg-black'} border border-red-600 px-3 py-1`}> {page}</button>)
+                        key={page} className={`${currentPage === page ? 'bg-red-600' : 'bg-black'} border border-red-600 px-3 py-1 rounded-full ml-3`}> {page+1}</button>)
                 }
-                <button onClick={handleNextPage} className="px-2 py-1">Next</button>
+                <button onClick={handleNextPage} className="px-2 py-1">
+                <BsArrowRightCircleFill className="text-black border border-red-600 hover:text-red-600 bg-white rounded-full" size={30}/>
+                    
+                </button>
             </div>
         </div >
     );
