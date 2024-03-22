@@ -32,15 +32,19 @@ const MyBookings = () => {
                         <div key={item?._id} className="card lg:card-side bg-black bg-opacity-10 backdrop-blur-sm shadow-xl">
                             <img className="lg:w-[500px]" src={item?.image} alt="Album" />
                             <div className="card-body lg:w-[500px]">
-                                <h2 className="card-title">{item?.title}</h2>
+                                <h2 className="card-title md:text-2xl lg:text-3xl text-red-600">{item?.title}</h2>
                                 <div>
-                                    <p>Price : {item?.price} </p>
-                                    <p className="">{item?.brand}</p>
+                                    <p className="text-base md:text-lg lg:text-xl text-neutral-400">Brand : <span className="text-red-600 font-semibold"> {item?.brand} </span> </p>
+                                    <p className="text-base md:text-lg lg:text-xl text-neutral-400 my-3">Price : <span className="text-red-600 font-semibold">$ {item?.price} </span> </p>
+                                    <p className="text-neutral-400">
+                                        Pay 10% for confirmation your bookings.
+                                    </p>
                                 </div>
 
 
-                                <div className="card-actions justify-end">
-                                    <button className="btn btn-primary">Listen</button>
+                                <div className="flex flex-row gap-5">
+                                    <button className="rounded-lg bg-transparent border-red-500   border-2 text-red-600 hover:shadow-xl font-semibold hover:text-white hover:bg-red-600 hover:shadow-red-600 py-1 px-2 md:py-2 md:px-3 my-2 md:my-5">Cancel</button>
+                                    <button className="rounded-lg bg-transparent border-green-500   border-2 text-green-600 hover:shadow-xl font-semibold hover:text-white hover:bg-green-600 hover:shadow-green-600 py-1 px-2 md:py-2 md:px-3 my-2 md:my-5">Checkout</button>
                                 </div>
                             </div>
                         </div>
