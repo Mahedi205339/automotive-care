@@ -1,5 +1,5 @@
 import { HiMenuAlt3 } from "react-icons/hi";
-import {  AiOutlineBarChart } from "react-icons/ai";
+import { AiOutlineBarChart } from "react-icons/ai";
 import { RiFeedbackLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import React, { useContext, useEffect } from "react";
@@ -19,8 +19,8 @@ const Sidebar = ({ setIsSideOpen }) => {
     const adminMenus = [
         { name: "Home", link: "/", icon: IoHome },
         { name: "Dashboard", link: "/dashboard", icon: AiOutlineBarChart },
-        { name: "Add Car", link: "/dashboard/add-cars", icon: FaCarRear },
-        { name: "Update Car", link: "/dashboard/update-cars", icon: MdOutlineCarCrash },
+        { name: "Add Car", link: "/dashboard/add-cars", icon: MdOutlineCarCrash },
+        { name: "All Cars", link: "/dashboard/all-cars", icon: FaCarRear },
         { name: "Feedback", link: "user-feedback", icon: RiFeedbackLine },
     ];
 
@@ -38,7 +38,7 @@ const Sidebar = ({ setIsSideOpen }) => {
                             }`}
                     >
                         <Link className="h-[40px] text-base text-red-700 font-bold font- flex items-start" to="/">
-                    
+
                         </Link>
                         <HiMenuAlt3
                             size={26}
@@ -59,7 +59,7 @@ const Sidebar = ({ setIsSideOpen }) => {
                                     <h2
                                         style={{
                                             transitionDelay: `${i + 3}00ms`,
-                                        } }
+                                        }}
                                         className={`whitespace-pre text-base duration-500 ${!open && "opacity-0 translate-x-28 overflow-hidden"
                                             }`}
                                     >
