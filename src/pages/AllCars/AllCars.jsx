@@ -1,6 +1,7 @@
 import useCars from "../../hooks/useCars";
-
-
+import { IoSettingsSharp } from "react-icons/io5";
+import { RiDeleteBinFill } from "react-icons/ri";
+import { Link } from "react-router-dom";
 const AllCars = () => {
 
     const [cars] = useCars()
@@ -19,8 +20,8 @@ const AllCars = () => {
                         <thead>
                             <tr className="text-red-700 text-lg font-medium">
                                 <th>No.</th>
-
                                 <th>Cars</th>
+                                <th>Details</th>
                                 <th> category</th>
                                 <th>Update</th>
                                 <th>Delete</th>
@@ -32,7 +33,7 @@ const AllCars = () => {
                             {
                                 cars.map((item, index) => (
 
-                                    <tr key={item._id} className="bg-transparent backdrop-blur-sm hover:bg-black hover:scale-x-105 hover:scale-y-110 ">
+                                    <tr key={item._id} className="bg-transparent backdrop-blur-sm hover:bg-black hover:scale-x-100 hover:scale-y-125 ">
                                         <td>
 
                                             <h1 className="text-lg ">{index + 1}</h1>
@@ -50,11 +51,18 @@ const AllCars = () => {
                                                 </div>
                                             </div>
                                         </td>
-
-                                        <td>{item?.category}</td>
-                                        <th>
-                                            <button className="btn btn-ghost btn-xs">details</button>
-                                        </th>
+                                        <Link to={`/cars/${item._id}`}>
+                                            <td className="text-lg text-red-600 " >
+                                                Details
+                                            </td>
+                                        </Link>
+                                        <td className="text-lg font-medium">{item?.category}</td>
+                                        <td>
+                                            <IoSettingsSharp className="ml-4" size={26} />
+                                        </td>
+                                        <td>
+                                            <RiDeleteBinFill className="ml-4" size={26} />
+                                        </td>
                                     </tr>
                                 ))
 

@@ -50,7 +50,7 @@ const Navbar = () => {
         <li> <NavLink
             to="/my-bookings"
             className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "bg-red-600" : ""
+                isPending ? "pending" : isActive ? "bg-red-600 px-3 py-2 rounded-lg" : ""
             }
         >
            My Bookings
@@ -59,7 +59,7 @@ const Navbar = () => {
         <li> <NavLink
             to="/dashboard"
             className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "bg-red-600" : ""
+                isPending ? "pending" : isActive ? "bg-red-600 px-3 py-2 rounded-lg" : ""
             }
         >
             Dashboard
@@ -68,7 +68,7 @@ const Navbar = () => {
         <li>
             {
 
-                user ? <button onClick={handleLogOut} className=" font-semibold px-2 py-1 lg:px-4 lg:py-2 rounded bg-red-600 border-collapse text-white">Log out</button> :
+                user ? <button onClick={handleLogOut} className=" font-semibold px-2 py-1 lg:px-4 lg:py-2 rounded bg-red-800 border-collapse text-white">Log out</button> :
                     <NavLink
                         to="/login"
                         className={({ isActive, isPending }) =>

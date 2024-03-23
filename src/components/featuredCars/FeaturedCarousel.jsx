@@ -17,19 +17,27 @@ const featuredCarousel = ({ item }) => {
                                 item?.description.slice(0, 80)
                         }.....
                     </p>
-                    <Link className='bg-transparent' to={`/cars/${item._id}`}>
+                    {
+                        item.category == 'cars' &&
+                        <Link className='bg-transparent' to={`/cars/${item._id}`}>
 
-                        <button className='rounded-lg bg-transparent border-red-500   border-2 text-red-600 hover:shadow-xl font-semibold hover:text-white hover:bg-red-600 hover:shadow-red-600 py-1 px-2 md:py-2 md:px-3 my-2 md:my-5'>
-                            Details
-                        </button>
-                    </Link>
+                            <button className='rounded-lg bg-transparent border-red-500   border-2 text-red-600 hover:shadow-xl font-semibold hover:text-white hover:bg-red-600 hover:shadow-red-600 py-1 px-2 md:py-2 md:px-3 my-2 md:my-5'>
+                                Details
+                            </button>
+                        </Link>
+                    }
+
 
 
                 </div>
+                {
+                    item?.category == 'cars' &&
+                    <button className='bg-red-600 px-2 py-1 absolute z-20 top-0'>
+                        $ {item.price}
+                    </button>
+                }
 
-                <button className='bg-red-600 px-2 py-1 absolute z-20 top-0'>
-                   $ {item.price}
-                </button>
+
 
 
             </div>
