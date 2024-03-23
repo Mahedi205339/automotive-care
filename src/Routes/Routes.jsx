@@ -10,6 +10,7 @@ import DashboardLayout from "../Layout/DashboardLayout";
 import Dashboard from "../components/Dashboard/Dashboard";
 import CarDetails from "../components/CarDetails/CarDetails";
 import MyBookings from "../pages/MyBookings/MyBookings";
+import UpdateCar from "../pages/UpdateCar/UpdateCar";
 // import PrivateRoute from "./PrivateRoute";
 
 
@@ -62,6 +63,10 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/add-cars',
                 element: <AddCars></AddCars>
+            },
+            {
+                path: '/dashboard/update-cars',
+                element: <UpdateCar></UpdateCar>
             },
 
         ]

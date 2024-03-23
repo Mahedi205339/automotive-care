@@ -1,11 +1,12 @@
 import { HiMenuAlt3 } from "react-icons/hi";
-import { AiOutlineUser, AiOutlineBarChart } from "react-icons/ai";
-import { FaEnvelope } from "react-icons/fa";
+import {  AiOutlineBarChart } from "react-icons/ai";
 import { RiFeedbackLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import React, { useContext, useEffect } from "react";
 import { OpenContext } from "../Context/useOpen";
-
+import { IoHome } from "react-icons/io5";
+import { FaCarRear } from "react-icons/fa6";
+import { MdOutlineCarCrash } from "react-icons/md";
 const Sidebar = ({ setIsSideOpen }) => {
     const { open, setOpen } = useContext(OpenContext);
     useEffect(() => {
@@ -16,10 +17,10 @@ const Sidebar = ({ setIsSideOpen }) => {
 
 
     const adminMenus = [
-        { name: "Home", link: "/", icon: AiOutlineBarChart },
+        { name: "Home", link: "/", icon: IoHome },
         { name: "Dashboard", link: "/dashboard", icon: AiOutlineBarChart },
-        { name: "Add Car", link: "/dashboard/add-cars", icon: AiOutlineUser },
-        { name: "Inbox", link: "inbox", icon: FaEnvelope },
+        { name: "Add Car", link: "/dashboard/add-cars", icon: FaCarRear },
+        { name: "Update Car", link: "/dashboard/update-cars", icon: MdOutlineCarCrash },
         { name: "Feedback", link: "user-feedback", icon: RiFeedbackLine },
     ];
 

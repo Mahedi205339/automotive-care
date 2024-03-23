@@ -61,7 +61,7 @@ const SignUp = () => {
                     });
                     toast.success("Successfully signed up");
                     reset();
-                    navigate("/");
+                    navigate("/add-car");
                 });
             });
         } catch (err) {
