@@ -30,13 +30,13 @@ const Sidebar = ({ setIsSideOpen }) => {
             <section className="flex gap-6 fixed left-0">
                 <div
                     className={`bg-[#000000] text-red-600 min-h-screen ${open ? "w-[300px] px-4" : "w-16 px-3"
-                        } duration-700 text-red-600 -z-10`}
+                        } duration-700 text-red-600 -z-10 border-r-2 border-red-700`}
                 >
                     <div
                         className={`py-6 flex ${open ? "justify-between" : "justify-center"
                             }`}
                     >
-                        <Link className="h-[40px] text-xl text-red-700 font-bold font- flex items-start" to="/">
+                        <Link className="h-[40px] text-base text-red-700 font-bold font- flex items-start" to="/">
                     
                         </Link>
                         <HiMenuAlt3
@@ -59,7 +59,7 @@ const Sidebar = ({ setIsSideOpen }) => {
                                         style={{
                                             transitionDelay: `${i + 3}00ms`,
                                         } }
-                                        className={`whitespace-pre text-xl duration-500 ${!open && "opacity-0 translate-x-28 overflow-hidden"
+                                        className={`whitespace-pre text-base duration-500 ${!open && "opacity-0 translate-x-28 overflow-hidden"
                                             }`}
                                     >
                                         {menu?.name}

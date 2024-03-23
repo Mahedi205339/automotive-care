@@ -30,14 +30,17 @@ const MyBookings = () => {
                 {
                     myBookings?.map(item => (
                         <div key={item?._id} className="card lg:card-side bg-black bg-opacity-10 backdrop-blur-sm shadow-xl">
-                            <img className="lg:w-[500px]" src={item?.image} alt="Album" />
+                            <img draggable="false" className="lg:w-[500px]" src={item?.image} alt="Album" />
                             <div className="card-body lg:w-[500px]">
                                 <h2 className="card-title md:text-2xl lg:text-3xl text-red-600">{item?.title}</h2>
                                 <div>
                                     <p className="text-base md:text-lg lg:text-xl text-neutral-400">Brand : <span className="text-red-600 font-semibold"> {item?.brand} </span> </p>
                                     <p className="text-base md:text-lg lg:text-xl text-neutral-400 my-3">Price : <span className="text-red-600 font-semibold">$ {item?.price} </span> </p>
+                                    <p className="text-neutral-400 text-lg my-3">
+                                        Pay <span  className="text-red-600 font-semibold">10%</span>  for confirmation your bookings.
+                                    </p>
                                     <p className="text-neutral-400">
-                                        Pay 10% for confirmation your bookings.
+                                        If you want to book another car .Please cancel and book another car. You cannot booked more than one car at a moment 
                                     </p>
                                 </div>
 

@@ -118,6 +118,7 @@ const Cars = () => {
                                 <option value="Audi">Audi</option>
                                 <option value="Tesla">Tesla</option>
                                 <option value="Mercedes">Mercedes</option>
+                                <option value="Honda">Honda</option>
                             </select>
 
 
