@@ -2,10 +2,46 @@ import useCars from "../../hooks/useCars";
 import { IoSettingsSharp } from "react-icons/io5";
 import { RiDeleteBinFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
+import useAxiosPublic from "../../hooks/useAxoisPublic";
 const AllCars = () => {
 
-    const [cars] = useCars()
+    const [cars, refetch] = useCars()
     console.log(cars);
+    const axiosPublic = useAxiosPublic()
+    console.log(typeof refetch);
+
+    const handleCarDelete = (id) => {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            background: "rgba(0, 0, 0, 0.5)",
+            backdrop: "blur(100px)",
+            cancelButtonColor: "#d33",
+            color: "white",
+            confirmButtonText: "Yes, delete it!"
+        }).then(async (result) => {
+            if (result.isConfirmed) {
+                const res = await axiosPublic.delete(`/cars/${id}`);
+                console.log(res.data)
+
+                refetch()
+                Swal.fire({
+                    title: "Deleted!",
+                    text: "Your Item has been deleted.",
+                    icon: "success",
+                    background: "rgba(0, 0, 0, 0.5)",
+                    backdrop: "blur(100px)",
+                    color: "white",
+                    timer: 1500
+                });
+            }
+
+        });
+    }
 
     return (
         <div className="w-full min-h-screen bg-black text-red-600 featured-bg">
@@ -61,7 +97,7 @@ const AllCars = () => {
                                             <IoSettingsSharp className="ml-4" size={26} />
                                         </td>
                                         <td>
-                                            <RiDeleteBinFill className="ml-4" size={26} />
+                                            <RiDeleteBinFill onClick={() => handleCarDelete(item._id)} className="ml-4" size={26} />
                                         </td>
                                     </tr>
                                 ))

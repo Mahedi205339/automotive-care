@@ -11,7 +11,7 @@ const useCars = (asc) => {
     console.log(asc);
 
 
-    const { data: cars = [], isLoading, refetch } = useQuery({
+    const { data: cars = [], isLoading, error, refetch } = useQuery({
         queryKey: ['cars'],
 
         queryFn: async () => {
@@ -21,10 +21,10 @@ const useCars = (asc) => {
         }
 
     })
+    console.log(typeof refetch);
 
 
-
-    return [cars, isLoading, refetch]
+    return [cars,refetch, isLoading, error ]
 }
 
 export default useCars;
