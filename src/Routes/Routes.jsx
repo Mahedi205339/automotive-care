@@ -66,8 +66,9 @@ const router = createBrowserRouter([
                 element: <AddCars></AddCars>
             },
             {
-                path: '/dashboard/update-cars',
-                element: <UpdateCar></UpdateCar>
+                path: '/dashboard/update-cars/:id',
+                element: <UpdateCar></UpdateCar>,
+                loader: ({params})=>fetch(`http://localhost:5000/cars/${params.id}`)
             },
             
             {

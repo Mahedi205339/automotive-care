@@ -7,9 +7,9 @@ import useAxiosPublic from "../../hooks/useAxoisPublic";
 const AllCars = () => {
 
     const [cars, refetch] = useCars()
-    console.log(cars);
+    // console.log(cars);
     const axiosPublic = useAxiosPublic()
-    console.log(typeof refetch);
+    // console.log(typeof refetch);
 
     const handleCarDelete = (id) => {
         Swal.fire({
@@ -94,7 +94,9 @@ const AllCars = () => {
                                         </Link>
                                         <td className="text-lg font-medium">{item?.category}</td>
                                         <td>
-                                            <IoSettingsSharp className="ml-4" size={26} />
+                                            <Link to={`/dashboard/update-cars/${item?._id}`}>
+                                                <IoSettingsSharp className="ml-4 text-red-600" size={26} />
+                                            </Link>
                                         </td>
                                         <td>
                                             <RiDeleteBinFill onClick={() => handleCarDelete(item._id)} className="ml-4" size={26} />
