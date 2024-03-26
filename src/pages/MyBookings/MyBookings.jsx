@@ -1,14 +1,24 @@
+import { useState } from "react";
 import Loading from "../../components/Loading/Loading";
 import useAuth from "../../hooks/useAuth";
 import useAxiosPublic from "../../hooks/useAxoisPublic";
 import { useQuery } from "@tanstack/react-query";
 import Swal from "sweetalert2";
+import BookingModal from "../../components/ui/BookingModal";
 
 const MyBookings = () => {
     const { user } = useAuth()
-
+    const [isOpen, setIsOpen] = useState(false)
     const axiosPublic = useAxiosPublic();
-    // console.log(user?.email);
+
+    //close Modal function 
+    const closeModal = () => {
+        setIsOpen(false)
+    }
+
+
+
+    console.log(user?.email);
     const { data: myBookings = [], isLoading, refetch } = useQuery({
         queryKey: ['/cars'],
 
@@ -66,7 +76,7 @@ const MyBookings = () => {
                     myBookings.length == 0 ?
                         <div>
                             <h1 className="text-xl md:text-2xl lg:text-4xl text-red-600 font-medium ">
-                            No Booking found
+                                No Booking found
                             </h1>
                         </div> :
                         <>
@@ -90,7 +100,7 @@ const MyBookings = () => {
 
                                             <div className="flex flex-row gap-5">
                                                 <button onClick={() => handleCancelBooking(item._id)} className="rounded-lg bg-transparent border-red-500   border-2 text-red-600 hover:shadow-xl font-semibold hover:text-white hover:bg-red-600 hover:shadow-red-600 py-1 px-2 md:py-2 md:px-3 my-2 md:my-5">Cancel</button>
-                                                <button className="rounded-lg bg-transparent border-green-500   border-2 text-green-600 hover:shadow-xl font-semibold hover:text-white hover:bg-green-600 hover:shadow-green-600 py-1 px-2 md:py-2 md:px-3 my-2 md:my-5">Checkout</button>
+                                                <button onClick={() => setIsOpen(true)} className="rounded-lg bg-transparent border-green-500   border-2 text-green-600 hover:shadow-xl font-semibold hover:text-white hover:bg-green-600 hover:shadow-green-600 py-1 px-2 md:py-2 md:px-3 my-2 md:my-5">Checkout</button>
                                             </div>
                                         </div>
                                     </div>
@@ -103,6 +113,11 @@ const MyBookings = () => {
 
 
             </div>
+            <BookingModal
+                closeModal={closeModal}
+                isOpen={isOpen}
+
+            />
         </div>
 
     );
