@@ -33,7 +33,7 @@ const Cars = () => {
     const numberOfPages = Math.ceil(countCar / carPerPage)
 
 
-    // type 1 
+    // using for loop ;
     // for (let i = 0; i < numberOfPages; i++) {
     //     pages.push(i)
     // }
