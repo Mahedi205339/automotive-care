@@ -21,13 +21,14 @@ const CheckoutForm = ({ bookingInfo, closeModal }) => {
         const { data } = await axiosPublic.post('/create-payment-intent', price)
         return data
     }
+    console.log(bookingInfo?._id);
 
     //console.log(bookingInfo);
 
     useEffect(() => {
         // create payment intent
         if (bookingInfo.price > 0) {
-            createPaymentIntent({ price: bookingInfo.price }).then(data => {
+            createPaymentIntent({ price: bookingInfo?.price }).then(data => {
 
                 // console.log(data.clientSecret)
                 setClientSecret(data.clientSecret)
@@ -90,13 +91,12 @@ const CheckoutForm = ({ bookingInfo, closeModal }) => {
             }
             try {
                 // save payment information to the server
-                await saveBooking(paymentInfo)
-
+                await axiosPublic.post("/payment-bookings",  paymentInfo )
+                await axiosPublic.delete(`/booking/${bookingInfo?._id}`)
                 // Update room status in db
-                await updateStatus(bookingInfo.roomId, true)
-                const text = `Booking Successful! ${paymentIntent.id}`
+                const text = `Booking Successful! ${paymentIntent?.id}`
                 toast.success(text)
-                navigate('/dashboard/my-bookings')
+                navigate('/')
             } catch (err) {
                 console.log(err)
                 toast.error(err.message)

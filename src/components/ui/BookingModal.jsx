@@ -5,8 +5,11 @@ import { Elements } from '@stripe/react-stripe-js'
 import CheckoutForm from './CheckoutForm'
 const stripePromise = loadStripe(import.meta.env.VITE_Payment_Gateway_PK)
 const BookingModal = ({ closeModal, isOpen, bookingInfo }) => {
+
+    console.log(bookingInfo);
+
     return (
-        <Transition  show={isOpen} as={Fragment}>
+        <Transition show={isOpen} as={Fragment}>
             <Dialog as='div' className='relative z-10' onClose={closeModal}>
                 <Transition.Child
                     as={Fragment}
@@ -17,6 +20,7 @@ const BookingModal = ({ closeModal, isOpen, bookingInfo }) => {
                     leaveFrom='opacity-100'
                     leaveTo='opacity-0'
                 >
+
                     <div className='fixed inset-0 bg-black bg-opacity-25' />
                 </Transition.Child>
 
@@ -40,23 +44,23 @@ const BookingModal = ({ closeModal, isOpen, bookingInfo }) => {
                                 </Dialog.Title>
                                 <div className='mt-2'>
                                     <p className='text-sm text-gray-500'>
-                                        {/* Room: {bookingInfo.title} */}
+                                        Room: {bookingInfo?.title}
                                     </p>
                                 </div>
                                 <div className='mt-2'>
                                     <p className='text-sm text-gray-500'>
-                                        {/* Location: {bookingInfo.location} */}
+                                        Brand: {bookingInfo?.brand}
                                     </p>
                                 </div>
                                 <div className='mt-2'>
                                     <p className='text-sm text-gray-500'>
-                                        {/* Guest: {bookingInfo.guest.name} */}
+                                        Guest: {bookingInfo?.mileage}
                                     </p>
                                 </div>
 
                                 <div className='mt-2'>
                                     <p className='text-sm text-gray-500'>
-                                        {/* Price: $ {bookingInfo.price} */}
+                                        Price: $ {bookingInfo?.price}
                                     </p>
                                 </div>
                                 <hr className='mt-8 ' />

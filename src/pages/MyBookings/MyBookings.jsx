@@ -10,8 +10,6 @@ const MyBookings = () => {
     const { user } = useAuth()
     const [isOpen, setIsOpen] = useState(false)
     const axiosPublic = useAxiosPublic();
-
-    //close Modal function 
     const closeModal = () => {
         setIsOpen(false)
     }
@@ -29,6 +27,11 @@ const MyBookings = () => {
         }
 
     })
+
+    const bookingInfo = myBookings[0] ;
+    console.log(bookingInfo);
+
+    
 
     const handleCancelBooking = (id) => {
         // console.log(id);
@@ -116,7 +119,7 @@ const MyBookings = () => {
             <BookingModal
                 closeModal={closeModal}
                 isOpen={isOpen}
-
+                bookingInfo={bookingInfo}
             />
         </div>
 
