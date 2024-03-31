@@ -4,6 +4,7 @@ import { RiFeedbackLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import React, { useContext, useEffect } from "react";
 import { OpenContext } from "../Context/useOpen";
+import { MdPayment } from "react-icons/md";
 import { IoHome } from "react-icons/io5";
 import { FaCarRear } from "react-icons/fa6";
 import { MdOutlineCarCrash } from "react-icons/md";
@@ -21,6 +22,7 @@ const Sidebar = ({ setIsSideOpen }) => {
         { name: "Dashboard", link: "/dashboard", icon: AiOutlineBarChart },
         { name: "Add Car", link: "/dashboard/add-cars", icon: MdOutlineCarCrash },
         { name: "All Cars", link: "/dashboard/all-cars", icon: FaCarRear },
+        { name: "All Payments", link: "/dashboard/all-payments", icon: MdPayment },
         { name: "Feedback", link: "user-feedback", icon: RiFeedbackLine },
     ];
 
