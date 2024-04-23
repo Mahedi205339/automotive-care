@@ -21,7 +21,7 @@ const useCars = (asc) => {
         }
 
     })
-    console.log(typeof refetch);
+    // console.log(typeof refetch);
 
 
     return [cars,refetch, isLoading, error ]
